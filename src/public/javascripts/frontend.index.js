@@ -6862,7 +6862,7 @@ module.exports = validateDOMNesting;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(194);
 /* unused harmony reexport HashRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(89);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
+/* unused harmony reexport Link */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(195);
 /* unused harmony reexport MemoryRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(196);
@@ -11012,7 +11012,7 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navigation_Navigation__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__header_Header__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_Home__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__about_About__ = __webpack_require__(97);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -11044,7 +11044,7 @@ var App = function (_React$Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__navigation_Navigation__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__header_Header__["a" /* default */], null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Switch */],
                     null,
@@ -11167,108 +11167,8 @@ var Home = function (_React$Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Home);
 
 /***/ }),
-/* 99 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(56);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var Navigation = function (_React$Component) {
-    _inherits(Navigation, _React$Component);
-
-    function Navigation() {
-        _classCallCheck(this, Navigation);
-
-        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this));
-    }
-
-    _createClass(Navigation, [{
-        key: 'render',
-        value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'li',
-                { className: 'pure-menu-item' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-                    { className: 'pure-menu-link', to: this.props.link },
-                    this.props.link
-                )
-            );
-        }
-    }]);
-
-    return Navigation;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (Navigation);
-
-/***/ }),
-/* 100 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Link__ = __webpack_require__(99);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var Navigation = function (_React$Component) {
-    _inherits(Navigation, _React$Component);
-
-    function Navigation() {
-        _classCallCheck(this, Navigation);
-
-        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).apply(this, arguments));
-    }
-
-    _createClass(Navigation, [{
-        key: 'render',
-        value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'home-menu pure-menu pure-menu-horizontal pure-menu-fixed' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { className: 'pure-menu-heading', href: '' },
-                    'Your Site'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'ul',
-                    { className: 'pure-menu-list' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */], { link: 'home' }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */], { link: 'tour' })
-                )
-            );
-        }
-    }]);
-
-    return Navigation;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (Navigation);
-
-/***/ }),
+/* 99 */,
+/* 100 */,
 /* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25471,6 +25371,189 @@ exports.default = valueEqual;
 
 module.exports = __webpack_require__(95);
 
+
+/***/ }),
+/* 227 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__navigation__ = __webpack_require__(228);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Header = function (_React$Component) {
+    _inherits(Header, _React$Component);
+
+    function Header() {
+        _classCallCheck(this, Header);
+
+        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    }
+
+    _createClass(Header, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'section',
+                { 'class': 'hero is-primary is-large header-image' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { 'class': 'hero-head' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__navigation__["a" /* default */], null)
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { 'class': 'hero-body' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { 'class': 'container has-text-centered' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'h1',
+                            { 'class': 'title is-2' },
+                            'Hero Heading'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'h2',
+                            { 'class': 'subtitle is-5' },
+                            'A hero description could go here.'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'p',
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'a',
+                                { 'class': 'button is-outlined' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { 'class': 'icon' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { 'class': 'fa fa-download' })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    null,
+                                    'Download'
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Header;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Header);
+
+/***/ }),
+/* 228 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+//import Link from './Link';
+
+var Navigation = function (_React$Component) {
+    _inherits(Navigation, _React$Component);
+
+    function Navigation() {
+        _classCallCheck(this, Navigation);
+
+        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).apply(this, arguments));
+    }
+
+    _createClass(Navigation, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "header",
+                { "class": "nav" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { "class": "container" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { "class": "nav-left" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "a",
+                            { "class": "nav-item", href: "../index.html" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "../images/bulma-white.png", alt: "Logo" })
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "span",
+                        { "class": "nav-toggle" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", null),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", null),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", null)
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { "class": "nav-right nav-menu" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "a",
+                            { "class": "nav-item is-active" },
+                            "Home"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "a",
+                            { "class": "nav-item" },
+                            "Examples"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "a",
+                            { "class": "nav-item" },
+                            "Documentation"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            { "class": "nav-item" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "a",
+                                { "class": "button is-info is-outlined is-inverted" },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "span",
+                                    { "class": "icon" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { "class": "fa fa-github" })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "span",
+                                    null,
+                                    "Download"
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Navigation;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Navigation);
 
 /***/ })
 /******/ ]);
