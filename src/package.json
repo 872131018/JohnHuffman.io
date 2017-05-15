@@ -18,6 +18,12 @@
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta10",
     "purecss": "^0.6.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
     "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1"
   }
 }

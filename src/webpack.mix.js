@@ -20,8 +20,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
 */
 mix.combine([
    'node_modules/purecss/build/pure-min.css',
+   'resources/stylesheets/frontend/frontend.css'
 ], 'public/stylesheets/frontend.css');
 /**
 * JAVASCRIPTS FRONTEND
 */
-//mix.js('resources/assets/javascripts/frontend/app.js', 'public/javascripts/frontend.app.js');
+mix.react('resources/javascripts/frontend/index.js', 'public/javascripts/frontend.index.js');
