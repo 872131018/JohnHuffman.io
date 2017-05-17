@@ -6,9 +6,7 @@ export default class Home extends React.Component {
             <div className="splash-container">
                 <div className="splash">
                     <h1 className="splash-head">Big Bold Text</h1>
-                    <p className="splash-subhead">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
+                    <p className="splash-subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <p>
                         <a href="http://purecss.io" className="pure-button pure-button-primary">Get Started</a>
                     </p>
