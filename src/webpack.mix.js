@@ -19,9 +19,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
 * STYLESHEETS FRONTEND
 */
 mix.combine([
-   'node_modules/bulma/css/bulma.css',
-   'node_modules/w3-css/w3.css',
-   'resources/stylesheets/frontend/frontend.css'
+    'node_modules/w3-css/w3.css',
+    'resources/stylesheets/frontend/frontend.css'
 ], 'public/stylesheets/frontend.css');
 /**
 * JAVASCRIPTS FRONTEND

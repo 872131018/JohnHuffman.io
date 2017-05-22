@@ -3,19 +3,12 @@ import React from 'react';
 export default class Header extends React.Component {
     render() {
         return (
-            <div>
-                <section className="hero is-medium is-primary">
-                    <div className="hero-body container has-text-centered">
-                            <h1 className="w3-text-white">I am John Huffman</h1>
-                            <h3 className="w3-text-white">This is my webpage.</h3>
-                            <a className="button is-outlined">
-                                <span className="icon">
-                                    <i className="fa fa-download"></i>
-                                </span>
-                                <span>Download</span>
-                            </a>
-                        </div>
-                </section>
+            <div className="bgimg-1 w3-display-container w3-opacity-min">
+                <div className="w3-display-middle" style={{whiteSpace:'nowrap'}}>
+                    <span className="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+                        MY<span className="w3-hide-small"> WEBSITE </span>LOGO
+                    </span>
+                </div>
             </div>
         );
     }
