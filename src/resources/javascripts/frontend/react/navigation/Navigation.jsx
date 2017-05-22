@@ -9,8 +9,8 @@ export default class Navigation extends React.Component {
                     <a className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right">
                         <i className="fa fa-bars"></i>
                     </a>
-                    <Route to="/"/>
-                    <Route to="/about"/>
+                    <Route route="Home"/>
+                    <Route route="About"/>
                 </div>
             </div>
         );
