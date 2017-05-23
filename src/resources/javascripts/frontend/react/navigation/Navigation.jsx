@@ -1,23 +1,48 @@
 import React from 'react';
 import Route from './Route';
+import Hamburger from './Hamburger';
 
 export default class Navigation extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            toggle: false
+        };
+        this.openMenu = this.openMenu.bind(this);
+    }
+
+    openMenu() {
+        this.setState((previousState) => {
+            console.log(this.state.toggle)
+            return { toggle: !previousState.toggle };
+        });
+    }
+
     render() {
         return (
-            <div className="w3-top">
-                <div className="w3-bar w3-white w3-card-2" id="myNavbar">
-                    <a href="#home" className="w3-bar-item w3-button w3-wide">LOGO</a>
+            <div>
+                <div className="w3-top w3-bar w3-light-grey w3-opacity">
+                    <span className="w3-bar-item w3-button w3-wide">
+                        <i className="fa fa-hand-spock-o fa-2x w3-margin-right"></i>WELCOME.
+                    </span>
                     <div className="w3-right w3-hide-small">
-                        <a href="#about" className="w3-bar-item w3-button">ABOUT</a>
-                        <a href="#team" className="w3-bar-item w3-button"><i className="fa fa-user"></i> TEAM</a>
-                        <a href="#work" className="w3-bar-item w3-button"><i className="fa fa-th"></i> WORK</a>
-                        <a href="#pricing" className="w3-bar-item w3-button"><i className="fa fa-usd"></i> PRICING</a>
-                        <a href="#contact" className="w3-bar-item w3-button"><i className="fa fa-envelope"></i> CONTACT</a>
+                        <Route route="home" icon="home"/>
+                        <Route route="work" icon="bar-chart"/>
+                        <Route route="pricing" icon="money"/>
+                        <Route route="contact" icon="mobile-phone"/>
                     </div>
-                    <a className="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">
-                        <i className="fa fa-bars"></i>
-                    </a>
+                    <div onClick={ this.openMenu }>
+                        <Hamburger/>
+                    </div>
                 </div>
+                { this.state.toggle == true &&
+                    <div className="w3-sidebar w3-bar-block w3-black w3-hide-medium w3-hide-large">
+                        <Route route="home" icon="home"/>
+                        <Route route="work" icon="bar-chart"/>
+                        <Route route="pricing" icon="money"/>
+                        <Route route="contact" icon="mobile-phone"/>
+                    </div>
+                }
             </div>
         );
     }
