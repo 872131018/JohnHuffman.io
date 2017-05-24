@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navigation from './navigation/Navigation';
 import Hero from './hero/Hero';
 import About from './about/About';
+import Interests from './interests/Interests';
 
 export default class App extends React.Component {
     render() {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
                 <Navigation/>
                 <Hero/>
                 <About/>
+                <Interests/>
             </div>
         );
     }
