@@ -26,7 +26,7 @@ export default class Mobile extends React.Component {
                     <Hamburger/>
                 </div>
                 { this.state.toggle &&
-                    <div className="w3-bar-block w3-light-grey w3-opacity">
+                    <div className="w3-bar-block">
                         <Route route="/" name="HOME" icon="home"/>
                         <Route route="/work" name="WORK" icon="cogs"/>
                         <Route route="/contact" name="CONTACT" icon="commenting-o"/>
