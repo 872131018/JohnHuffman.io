@@ -4,6 +4,7 @@ import Navigation from './navigation/Navigation';
 import Hero from './hero/Hero';
 import About from './about/About';
 import Interests from './interests/Interests';
+import Contact from './contact/Contact';
 
 export default class App extends React.Component {
     render() {
@@ -13,6 +14,7 @@ export default class App extends React.Component {
                 <Hero/>
                 <About/>
                 <Interests/>
+                <Contact/>
             </div>
         );
     }
