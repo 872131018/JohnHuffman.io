@@ -5,7 +5,7 @@ const initialState = {
     }
 };
 
-module.exports = function(contents = initialState, action) {
+export default function(contents = initialState, action) {
     switch(action.type) {
         case 'FRONTEND_CONTENTS':
             contents = action.data;
