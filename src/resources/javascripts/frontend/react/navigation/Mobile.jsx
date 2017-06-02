@@ -20,7 +20,7 @@ export default class Mobile extends React.Component {
 
     render() {
         return (
-            <div className="w3-top w3-bar w3-light-grey w3-opacity">
+            <div>
                 <Welcome/>
                 <div onClick={ this.openMenu }>
                     <Hamburger/>

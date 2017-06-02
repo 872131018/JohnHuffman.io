@@ -4,7 +4,7 @@ import Content from './Content';
 export default class Header extends React.Component {
     render() {
         return (
-            <div className="w3-display-container bgimg-1">
+            <div className="w3-display-container bgimg">
                 <Content/>
             </div>
         );
