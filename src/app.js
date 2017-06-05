@@ -7,7 +7,14 @@ import bodyParser from 'body-parser';
 
 import index from './routes/index';
 import users from './routes/users';
-
+/**
+* Import dotenv and configure
+*/
+import dotenv from 'dotenv';
+dotenv.config();
+/**
+* Import database
+*/
 import db from './database/database';
 
 let app = express();

@@ -10,12 +10,14 @@
     "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
+    "axios": "latest",
     "babel-cli": "latest",
     "babel-preset-es2015": "latest",
     "babel-preset-react": "latest",
     "body-parser": "latest",
     "cookie-parser": "latest",
     "debug": "latest",
+    "dotenv": "^4.0.0",
     "express": "latest",
     "laravel-mix": "latest",
     "mongodb": "latest",

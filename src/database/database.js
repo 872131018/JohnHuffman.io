@@ -4,7 +4,7 @@ import ContentSeed from './seeds/Content';
 /**
 * Create a mongo connection
 */
-mongoose.connect('mongodb://');
+mongoose.connect('mongodb://mongo/JohnHuffman');
 
 /**
 * Load database and its data
@@ -12,11 +12,10 @@ mongoose.connect('mongodb://');
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  console.log('CONNECTED TO MONGO');
-  for(let seed in ContentSeed) {
-      let content = new Content(seed);
-      content.save();
-  }
+    for(let seed of ContentSeed) {
+        let content = new Content(seed);
+        content.save();
+    }
 });
 
 module.exports = db;

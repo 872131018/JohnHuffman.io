@@ -18,4 +18,17 @@ export default class App extends React.Component {
             </div>
         );
     }
+
+    componentDidMount() {
+        console.log("App Mounted!");
+        /**
+        * Load the contents of the app
+        */
+        this.loading++;
+        axios.get(window.base_url).then(response => {
+            store.dispatch({ type: 'FRONTEND_CONTENTS', data: response.data });
+            this.loading--;
+        });
+
+    }
 }
