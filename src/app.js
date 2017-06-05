@@ -8,7 +8,10 @@ import bodyParser from 'body-parser';
 import index from './routes/index';
 import users from './routes/users';
 
+import db from './database/database';
+
 let app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
