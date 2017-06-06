@@ -8,6 +8,10 @@ import bodyParser from 'body-parser';
 import index from './routes/index';
 import users from './routes/users';
 /**
+* Add CSRF protection
+*/
+import csrf from 'csurf';
+/**
 * Import dotenv and configure
 */
 import dotenv from 'dotenv';
@@ -31,6 +35,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+/**
+* Add csrf protection middleware
+*/
+app.use(csrf);
 
 app.use('/', index);
 app.use('/users', users);
