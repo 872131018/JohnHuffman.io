@@ -9,12 +9,10 @@ import bodyParser from 'body-parser';
 * Import session controls
 */
 import session from 'express-session';
-
 /**
-* Import routes being used
+* Add CSRF protection
 */
-import index from './routes/index';
-import users from './routes/users';
+import csrf from 'csurf';
 
 /**
 * Import dotenv and configure
@@ -26,6 +24,12 @@ dotenv.config();
 * Import database
 */
 import db from './database/database';
+
+/**
+* Import routes being used
+*/
+import index from './routes/index';
+import users from './routes/users';
 
 let app = express();
 
@@ -46,6 +50,7 @@ app.use(cookieParser());
 * Extra app middlewares
 */
 app.use(session({ secret: process.env.SESSION_KEY }));
+app.use(csrf());
 
 /**
 * Assign route middlewares
