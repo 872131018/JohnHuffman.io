@@ -5,17 +5,23 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 
+/**
+* Import session controls
+*/
+import session from 'express-session';
+
+/**
+* Import routes being used
+*/
 import index from './routes/index';
 import users from './routes/users';
-/**
-* Add CSRF protection
-*/
-import csrf from 'csurf';
+
 /**
 * Import dotenv and configure
 */
 import dotenv from 'dotenv';
 dotenv.config();
+
 /**
 * Import database
 */
@@ -23,8 +29,9 @@ import db from './database/database';
 
 let app = express();
 
-
-// view engine setup
+/**
+* View engine setup
+*/
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -34,12 +41,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 /**
-* Add csrf protection middleware
+* Extra app middlewares
 */
-app.use(csrf);
+app.use(session({ secret: process.env.SESSION_KEY }));
 
+/**
+* Assign route middlewares
+*/
 app.use('/', index);
 app.use('/users', users);
 
