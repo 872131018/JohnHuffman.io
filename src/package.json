@@ -20,7 +20,7 @@
     "debug": "latest",
     "dotenv": "latest",
     "express": "latest",
-    "express-session": "^1.15.3",
+    "express-session": "latest",
     "laravel-mix": "latest",
     "mongodb": "latest",
     "mongoose": "latest",
