@@ -13654,16 +13654,16 @@ var App = function (_React$Component) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var _this2 = this;
-
             console.log("App Mounted!");
             /**
             * Load the contents of the app
             */
-            this.loading++;
+            //this.loading++;
             axios.get(window.base_url).then(function (response) {
-                store.dispatch({ type: 'FRONTEND_CONTENTS', data: response.data });
-                _this2.loading--;
+                console.log(response.data
+                //store.dispatch({ type: 'FRONTEND_CONTENTS', data: response.data });
+                //this.loading--;
+                );
             });
         }
     }]);
@@ -13963,7 +13963,7 @@ var Form = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "w3-check", type: "checkbox", checked: true, name: "Like" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "w3-check", type: "checkbox", name: "Like" }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "label",
                         null,

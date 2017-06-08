@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.render('frontend', {
         title: 'Express',
-        csrf: req.csrfToken()
+        csrf: req.csrfToken(),
+        base_url: process.env.APP_URL
     });
 });
 

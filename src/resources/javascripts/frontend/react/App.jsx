@@ -24,10 +24,11 @@ export default class App extends React.Component {
         /**
         * Load the contents of the app
         */
-        this.loading++;
+        //this.loading++;
         axios.get(window.base_url).then(response => {
-            store.dispatch({ type: 'FRONTEND_CONTENTS', data: response.data });
-            this.loading--;
+            console.log(response.data)
+            //store.dispatch({ type: 'FRONTEND_CONTENTS', data: response.data });
+            //this.loading--;
         });
 
     }
