@@ -1,13 +1,21 @@
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+import Content from '../database/models/Content';
+
+let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('frontend', {
-        title: 'Express',
-        csrf: req.csrfToken(),
-        base_url: process.env.APP_URL
-    });
+    if(req.xhr) {
+        Content.find({}, (error, content) => {
+            res.json(content);
+        });
+    } else {
+        res.render('frontend', {
+            title: 'Express',
+            csrf: req.csrfToken(),
+            base_url: process.env.APP_URL
+        });
+    }
 });
 
 module.exports = router;

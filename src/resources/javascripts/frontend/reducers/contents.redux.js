@@ -1,13 +1,6 @@
-const initialState = {
-    Announcement: {
-        header: '',
-        content: ''
-    }
-};
-
-export default function(contents = initialState, action) {
+export default function(contents = [], action) {
     switch(action.type) {
-        case 'FRONTEND_CONTENTS':
+        case 'SET_CONTENTS':
             contents = action.data;
             break;
         default:

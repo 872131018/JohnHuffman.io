@@ -1,6 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class About extends React.Component {
+const props = () => {
+    return {
+        contents: store.getState().contentStore
+    };
+};
+
+class About extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount() {
+        console.log(this.props);
+    }
     render() {
         return (
             <div className="w3-container w3-section">
@@ -33,3 +46,5 @@ export default class About extends React.Component {
         );
     }
 }
+
+export default connect(props)(About);
