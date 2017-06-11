@@ -1,4 +1,23 @@
-export default function(contents = [], action) {
+const initialState = [
+    {
+        header: '',
+        content: ''
+    },
+    {
+        header: '',
+        content: ''
+    },
+    {
+        header: '',
+        content: ''
+    },
+    {
+        header: '',
+        content: ''
+    }
+];
+
+export default function(contents = initialState, action) {
     switch(action.type) {
         case 'SET_CONTENTS':
             contents = action.data;

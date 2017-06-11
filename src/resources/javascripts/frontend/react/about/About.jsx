@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const props = () => {
+const props = (store) => {
     return {
-        contents: store.getState().contentStore
+        contents: store.ContentStore
     };
 };
 
@@ -11,34 +11,32 @@ class About extends React.Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        console.log(this.props);
-    }
+
     render() {
         return (
             <div className="w3-container w3-section">
                 <div className="w3-center">
                     <h1>ABOUT</h1>
                     <div>
-                        <div className="w3-quarter">
+                        <div className="w3-quarter" onClick={ this.openMenu }>
                             <i className="fa fa-heartbeat fa-3x"></i>
-                            <p>Activination</p>
-                            <p>I'm an Archer and practitioner of Aikido. I also like to fish, camp, play golf, and lift weights.</p>
+                            <p>{ this.props.contents[0].header }</p>
+                            <p>{ this.props.contents[0].content }</p>
                         </div>
                         <div className="w3-quarter">
                             <i className="fa fa-rebel fa-3x"></i>
-                            <p>Nerdificated</p>
-                            <p>Talk to me about Star Wars, Dungeons and Dragons, Space, History... anything awesome really.</p>
+                            <p>{ this.props.contents[1].header }</p>
+                            <p>{ this.props.contents[1].content }</p>
                         </div>
                         <div className="w3-quarter">
                             <i className="fa fa-linux fa-3x"></i>
-                            <p>Animalifuscation</p>
-                            <p>I'm a big fan of animals.  I have 2 cats but I like animals great and small.</p>
+                            <p>{ this.props.contents[2].header }</p>
+                            <p>{ this.props.contents[2].content }</p>
                         </div>
                         <div className="w3-quarter">
                             <i className="fa fa-rocket fa-3x"></i>
-                            <p>Technologicon</p>
-                            <p>I have interest in the philosophy of futurism and transhumanism.  Basically, I want a space ship and a robot arm.</p>
+                            <p>{ this.props.contents[3].header }</p>
+                            <p>{ this.props.contents[3].content }</p>
                         </div>
                     </div>
                 </div>

@@ -13713,9 +13713,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var props = function props() {
+var props = function props(store) {
     return {
-        contents: store.getState().contentStore
+        contents: store.ContentStore
     };
 };
 
@@ -13729,11 +13729,6 @@ var About = function (_React$Component) {
     }
 
     _createClass(About, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            console.log(this.props);
-        }
-    }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -13752,17 +13747,17 @@ var About = function (_React$Component) {
                         null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'w3-quarter' },
+                            { className: 'w3-quarter', onClick: this.openMenu },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-heartbeat fa-3x' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Activination'
+                                this.props.contents[0].header
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'I\'m an Archer and practitioner of Aikido. I also like to fish, camp, play golf, and lift weights.'
+                                this.props.contents[0].content
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -13772,12 +13767,12 @@ var About = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Nerdificated'
+                                this.props.contents[1].header
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Talk to me about Star Wars, Dungeons and Dragons, Space, History... anything awesome really.'
+                                this.props.contents[1].content
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -13787,12 +13782,12 @@ var About = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Animalifuscation'
+                                this.props.contents[2].header
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'I\'m a big fan of animals.  I have 2 cats but I like animals great and small.'
+                                this.props.contents[2].content
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -13802,12 +13797,12 @@ var About = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Technologicon'
+                                this.props.contents[3].header
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'I have interest in the philosophy of futurism and transhumanism.  Basically, I want a space ship and a robot arm.'
+                                this.props.contents[3].content
                             )
                         )
                     )
@@ -14455,8 +14450,22 @@ var Navigation = function (_React$Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+var initialState = [{
+    header: '',
+    content: ''
+}, {
+    header: '',
+    content: ''
+}, {
+    header: '',
+    content: ''
+}, {
+    header: '',
+    content: ''
+}];
+
 /* harmony default export */ __webpack_exports__["a"] = (function () {
-    var contents = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var contents = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
     switch (action.type) {
