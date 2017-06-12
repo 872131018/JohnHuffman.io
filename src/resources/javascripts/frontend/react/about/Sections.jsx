@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from './Section';
 
 class Sections extends React.Component {
     constructor(props) {
@@ -7,14 +8,9 @@ class Sections extends React.Component {
 
     render() {
         const sections = this.props.contents.map((content) => {
-            return <div className="w3-quarter"
-                        key={ content._id.toString() }>
-                <i className={ `fa ${ content.icon } fa-3x` }></i>
-                <p>{ content.header }</p>
-                <p>{ content.content }</p>
-            </div>;
+            return <Section key={ content._id.toString() } content={ content }/>;
         });
-        console.log(sections)
+
         return (
             <div>
                 { sections }

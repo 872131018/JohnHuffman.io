@@ -6,6 +6,19 @@ import Interests from './interests/Interests';
 import Contact from './contact/Contact';
 
 export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        console.log("App Mounted!");
+        //this.loading++;
+        axios.get(window.base_url).then(response => {
+            store.dispatch({ type: 'SET_CONTENTS', data: response.data });
+            //this.loading--;
+        });
+    }
+
     render() {
         return (
             <div>
@@ -16,18 +29,5 @@ export default class App extends React.Component {
                 <Contact/>
             </div>
         );
-    }
-
-    componentDidMount() {
-        console.log("App Mounted!");
-        /**
-        * Load the contents of the app
-        */
-        //this.loading++;
-        axios.get(window.base_url).then(response => {
-            store.dispatch({ type: 'SET_CONTENTS', data: response.data });
-            //this.loading--;
-        });
-
     }
 }

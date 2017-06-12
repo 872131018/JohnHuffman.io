@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default class Interests extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
         return (
             <div className="w3-container w3-section w3-light-grey">
