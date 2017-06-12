@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const Content = mongoose.Schema({
     key: String,
+    icon: String,
     header: String,
     content: String
 }, {

@@ -7,7 +7,9 @@ let router = express.Router();
 router.get('/', function(req, res, next) {
     if(req.xhr) {
         Content.find({}, (error, content) => {
-            res.json(content);
+            res.json({
+                about: content
+            });
         });
     } else {
         res.render('frontend', {
