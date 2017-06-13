@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from './Loading';
 import Navigation from './navigation/Navigation';
 import Hero from './hero/Hero';
 import About from './about/About';
@@ -8,11 +9,17 @@ import Contact from './contact/Contact';
 export default class App extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            loading: 0
+        }
     }
 
     componentDidMount() {
         console.log("App Mounted!");
-        //this.loading++;
+        this.setState( previousState => {
+            return { loading: previousState.loading++ }
+        });
         axios.get(window.base_url).then(response => {
             store.dispatch({ type: 'SET_CONTENTS', data: response.data });
             //this.loading--;
@@ -20,13 +27,20 @@ export default class App extends React.Component {
     }
 
     render() {
+        const isLoading = this.state.loading;
+
         return (
             <div>
-                <Navigation/>
-                <Hero/>
-                <About/>
-                <Interests/>
-                <Contact/>
+                { isLoading ? (
+                    <Loading/>
+                ) : (
+
+                    <Navigation/>
+                    <Hero/>
+                    <About/>
+                    <Interests/>
+                    <Contact/>
+                )}
             </div>
         );
     }

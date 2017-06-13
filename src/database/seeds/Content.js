@@ -28,7 +28,33 @@ const contents = {
     "interests": [
         {
             "key": "InterestOne",
-
+            "header": "PHP Laravel/Symphony/Slim/Lumen",
+            "interest": "100%"
+        },
+        {
+            "key": "InterestTwo",
+            "header": "Node Express/Sail/Meteor",
+            "interest": "80%"
+        },
+        {
+            "key": "InterestThree",
+            "header": "ES6 React/Angular/Vue/Ember",
+            "interest": "90%"
+        },
+        {
+            "key": "InterestFour",
+            "header": "Python Django/Flask",
+            "interest": "75%"
+        },
+        {
+            "key": "InterestFive",
+            "header": "Ruby Rails/Sinatra",
+            "interest": "80%"
+        },
+        {
+            "key": "InterestSix",
+            "header": "Go",
+            "interest": "60%"
         }
     ]
 };
