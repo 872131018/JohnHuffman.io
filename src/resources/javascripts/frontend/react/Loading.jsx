@@ -8,13 +8,13 @@ export default class Loading extends React.Component {
     render() {
         return (
             <div className="atom">
-                <div className="center"></div>
-                <div className="ring"></div>
-                <div className="ring"></div>
-                <div className="ring"></div>
-                <div className="e"></div>
-                <div className="e"></div>
-                <div className="e"></div>
+                <div className="w3-aqua center"></div>
+                <div className="w3-border-grey ring"></div>
+                <div className="w3-border-grey ring"></div>
+                <div className="w3-border-grey ring"></div>
+                <div className="w3-aqua e"></div>
+                <div className="w3-aqua e"></div>
+                <div className="w3-aqua e"></div>
             </div>
         );
     }

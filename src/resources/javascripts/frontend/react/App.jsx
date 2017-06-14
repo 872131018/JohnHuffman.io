@@ -16,32 +16,40 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        console.log("App Mounted!");
-        this.setState( previousState => {
-            return { loading: previousState.loading++ }
+        this.setState( state => {
+            state.loading++;
+            console.log(state.loading)
+            return { loading: state.loading }
         });
-        axios.get(window.base_url).then(response => {
+
+        axios.get(window.location).then(response => {
             store.dispatch({ type: 'SET_CONTENTS', data: response.data });
-            //this.loading--;
+            this.setState( state => {
+                state.loading--;
+                console.log(this.state.loading)
+                return { loading: state.loading }
+            });
         });
+        console.log("App Mounted!");
     }
 
     render() {
         const isLoading = this.state.loading;
 
         return (
-            <div>
-                { isLoading ? (
+             isLoading ? (
+                <div>
                     <Loading/>
-                ) : (
-
+                </div>
+            ) : (
+                <div>
                     <Navigation/>
                     <Hero/>
                     <About/>
                     <Interests/>
                     <Contact/>
-                )}
-            </div>
+                </div>
+            )
         );
     }
 }

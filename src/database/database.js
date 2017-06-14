@@ -16,7 +16,7 @@ db.once('open', () => {
     * Empty collect before refilling
     */
     Content.remove({}, () => {
-        console.log('Content collection cleared')
+        //
     });
     /**
     * Seed the database content

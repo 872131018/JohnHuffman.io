@@ -4,7 +4,8 @@ const Content = mongoose.Schema({
     key: String,
     icon: String,
     header: String,
-    content: String
+    content: String,
+    group: String
 }, {
     timestamps: true,
     minimize: false
