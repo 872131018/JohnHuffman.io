@@ -1,7 +1,7 @@
 import React from 'react';
-import Section from './Section';
+import Interest from './Interest';
 
-class Sections extends React.Component {
+class List extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -19,4 +19,4 @@ class Sections extends React.Component {
     }
 }
 
-export default Sections;
+export default List;

@@ -1,14 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class Interests extends React.Component {
+const props = (store) => {
+    return {
+        contents: store.ContentStore.interests
+    };
+};
+
+class Interests extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
-            <div className="w3-container w3-section w3-light-grey">
-                <div className="w3-center">
+            <div className="w3-container w3-light-grey">
+                <div className="w3-section w3-center">
                     <h1>INTERESTS</h1>
                     <p>Laravel</p>
                     <div className="w3-container w3-center w3-padding-small w3-dark-grey" style={{width:'100%'}}>100%</div>
@@ -27,3 +34,5 @@ export default class Interests extends React.Component {
         );
     }
 }
+
+export default connect(props)(Interests);

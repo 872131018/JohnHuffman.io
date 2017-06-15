@@ -15,8 +15,8 @@ class About extends React.Component {
 
     render() {
         return (
-            <div className="w3-container w3-section">
-                <div className="w3-center">
+            <div className="w3-container">
+                <div className="w3-section w3-center">
                     <h1>ABOUT</h1>
                     <Sections contents={ this.props.contents }/>
                 </div>
