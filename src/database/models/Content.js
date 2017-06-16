@@ -5,7 +5,8 @@ const Content = mongoose.Schema({
     icon: String,
     header: String,
     content: String,
-    group: String
+    group: String,
+    interest: String
 }, {
     timestamps: true,
     minimize: false

@@ -1,5 +1,4 @@
 import React from 'react';
-import Interest from './Interest';
 
 class List extends React.Component {
     constructor(props) {
@@ -7,13 +6,10 @@ class List extends React.Component {
     }
 
     render() {
-        const interests = this.props.contents.map((content) => {
-            return <Interest key={ content._id.toString() } content={ content }/>;
-        });
-
         return (
             <div className="w3-panel">
-                { interests }
+                <p>{ this.props.content.header }</p>
+                <div className="w3-container w3-center w3-padding-small w3-grey" style={{ width: this.props.content.interests }}>{ this.props.content.interest}</div>
             </div>
         );
     }
