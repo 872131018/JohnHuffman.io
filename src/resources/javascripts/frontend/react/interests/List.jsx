@@ -8,11 +8,15 @@ class List extends React.Component {
 
     render() {
         const interests = this.props.contents.map((content) => {
-            return <Interest key={ content._id.toString() } content={ content }/>;
+            return (
+                <div className="w3-panel">
+                    <Interest key={ content._id.toString() } content={ content }/>
+                </div>
+            );
         });
 
         return (
-            <div className="w3-panel">
+            <div>
                 { interests }
             </div>
         );
