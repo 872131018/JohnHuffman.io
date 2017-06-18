@@ -14731,8 +14731,9 @@ var List = function (_React$Component) {
             var interests = this.props.contents.map(function (content) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'w3-panel' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Interest__["a" /* default */], { key: content._id.toString(), content: content })
+                    { className: 'w3-panel',
+                        key: content._id.toString() },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Interest__["a" /* default */], { content: content })
                 );
             });
 
