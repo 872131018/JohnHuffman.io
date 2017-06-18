@@ -486,6 +486,99 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 }
 
+.switcher {
+  position: relative;
+  display: inline-block;
+  padding-left: 110px;
+  font-size: 16px;
+}
+
+.switcher__indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #bbb;
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-animation-name: pulsein;
+          animation-name: pulsein;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+.switcher__indicator::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 80px;
+  height: 6px;
+  background-color: #d5d5d5;
+  border-radius: 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+input:checked + .switcher__indicator::after {
+  background-color: #29ce9a;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  -webkit-animation-name: pulseout;
+          animation-name: pulseout;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+input:checked + .switcher__indicator::before {
+  background-color: #29ce9a;
+}
+input:disabled + .switcher__indicator::after, input:disabled + .switcher__indicator::before {
+  background-color: #e5e5e5;
+}
+
+@-webkit-keyframes pulsein {
+  0%, 100% {
+    height: 30px;
+    width: 30px;
+  }
+  50% {
+    height: 28px;
+    width: 42px;
+  }
+}
+
+@keyframes pulsein {
+  0%, 100% {
+    height: 30px;
+    width: 30px;
+  }
+  50% {
+    height: 28px;
+    width: 42px;
+  }
+}
+@-webkit-keyframes pulseout {
+  0%, 100% {
+    height: 30px;
+    width: 30px;
+  }
+  50% {
+    height: 28px;
+    width: 42px;
+  }
+}
+@keyframes pulseout {
+  0%, 100% {
+    height: 30px;
+    width: 30px;
+  }
+  50% {
+    height: 28px;
+    width: 42px;
+  }
+}
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 body, html {
     height: 100%;

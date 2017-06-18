@@ -13,7 +13,6 @@ export default class App extends React.Component {
 
     componentDidMount() {
         store.dispatch({ type: 'SERVICE_LOADING' });
-
         axios.get(window.location).then(response => {
             store.dispatch({ type: 'SET_CONTENTS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
@@ -23,8 +22,8 @@ export default class App extends React.Component {
     }
 
     render() {
-        const isLoading = store.getState().ServiceStore.loading;
-
+        const isLoading = store.getState().ServiceStore;
+        
         return (
              isLoading ? (
                 <div>

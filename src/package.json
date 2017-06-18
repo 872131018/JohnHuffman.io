@@ -30,7 +30,7 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0",
+    "redux": "^3.7.0",
     "serve-favicon": "^2.4.3",
     "w3-css": "^4.0.4"
   }

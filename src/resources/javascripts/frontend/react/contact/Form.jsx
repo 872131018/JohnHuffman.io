@@ -1,28 +1,26 @@
 import React from 'react';
+import Checkbox from './Checkbox';
+import Input from './Input';
 
 export default class Form extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <div className="w3-half">
-                <div>
-                    <label>Name</label>
-                    <input className="w3-input" type="text" name="Name" required/>
+                <div className="w3-panel">
+                    <Input label="Name"/>
                 </div>
-                <div>
-                    <label>Email</label>
-                    <input className="w3-input" type="text" name="Email" required/>
+                <div className="w3-panel">
+                    <Input label="Email"/>
                 </div>
-                <div>
-                    <label>Message</label>
-                    <input className="w3-input" type="text" name="Message" required/>
+                <div className="w3-panel">
+                    <Input label="Message"/>
                 </div>
-                <div>
-                    <input className="w3-check" type="checkbox" name="Like"/>
-                    <label>I Like it!</label>
+                <div className="w3-panel">
+                    <Checkbox/>
                 </div>
                 <button className="w3-button w3-right w3-black">Send</button>
             </div>

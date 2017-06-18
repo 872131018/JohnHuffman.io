@@ -6,12 +6,14 @@ export default class Contact extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
-            <div className="w3-container w3-section">
-                <Content/>
-                <Form/>
+            <div className="w3-container">
+                <div className="w3-section">
+                    <Content/>
+                    <Form/>
+                </div>
             </div>
         );
     }
