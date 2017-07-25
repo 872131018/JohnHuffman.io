@@ -25,7 +25,11 @@ module.exports.views = {
   *                                                                          *
   ***************************************************************************/
 
-  // extension: 'ejs',
+    extension: 'pug',
+    getRenderFn: function() {
+       var cons = require('consolidate');
+       return cons.pug;
+   },
 
   /***************************************************************************
   *                                                                          *
@@ -36,6 +40,6 @@ module.exports.views = {
   *                                                                          *
   ***************************************************************************/
 
-  // layout: 'layout'
+   layout: false
 
 };

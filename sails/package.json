@@ -5,11 +5,13 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "async": "2.0.1",
+    "consolidate": "^0.14.5",
+    "lodash": "3.10.1",
+    "pug": "^2.0.0-rc.2",
     "sails": "^1.0.0-36",
     "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.4.0",
-    "lodash": "3.10.1",
-    "async": "2.0.1"
+    "sails-hook-sockets": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "3.5.0"
