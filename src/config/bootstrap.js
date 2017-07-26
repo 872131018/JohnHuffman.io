@@ -11,6 +11,20 @@
 
 module.exports.bootstrap = function(done) {
 
+    var seeds = require('../database/seeds/Content.js');
+    for(var seed of seeds.about) {
+        Content.create({
+            key: seed.key,
+            icon: seed.icon,
+            header: seed.header,
+            content: seed.content,
+            group: seed.group
+        }).exec(function(err) {
+            //
+        });
+    }
+
+
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   return done();
