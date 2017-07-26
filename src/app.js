@@ -1,79 +1,52 @@
-import express from 'express';
-import path from 'path';
-import favicon from 'serve-favicon';
-import logger from 'morgan';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-
 /**
-* Import session controls
-*/
-import session from 'express-session';
-/**
-* Add CSRF protection
-*/
-import csrf from 'csurf';
+ * app.js
+ *
+ * Use `app.js` to run your app without `sails lift`.
+ * To start the server, run: `node app.js`.
+ *
+ * This is handy in situations where the sails CLI is not relevant or useful.
+ *
+ * For example:
+ *   => `node app.js`
+ *   => `forever start app.js`
+ *   => `node debug app.js`
+ *   => `modulus deploy`
+ *   => `heroku scale`
+ *
+ * The same command-line arguments are supported, e.g.:
+ * `node app.js --silent --port=80 --prod`
+ *
+ * For more information see:
+ *   https://sailsjs.com/anatomy/app.js
+ */
 
-/**
-* Import dotenv and configure
-*/
-import dotenv from 'dotenv';
-dotenv.config();
 
-/**
-* Import database
-*/
-import db from './database/database';
+// Ensure we're in the project directory, so cwd-relative paths work as expected
+// no matter where we actually lift from.
+// > Note: This is not required in order to lift, but it is a convenient default.
+process.chdir(__dirname);
 
-/**
-* Import routes being used
-*/
-import index from './routes/index';
-import users from './routes/users';
 
-let app = express();
 
-/**
-* View engine setup
-*/
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// Attempt to import `sails` dependency, as well as `rc` (for loading `.sailsrc` files).
+var sails;
+var rc;
+try {
+  sails = require('sails');
+  rc = require('sails/accessible/rc');
+} catch (e) {
+  console.error('Encountered an error when attempting to require(\'sails\'):');
+  console.error(e.stack);
+  console.error('--');
+  console.error('To run an app using `node app.js`, you usually need to have a version of `sails` installed in the same directory as your app.');
+  console.error('To do that, run `npm install sails`');
+  console.error();
+  console.error('Alternatively, if you have sails installed globally (i.e. you did `npm install -g sails`), you can use `sails lift`.');
+  console.error('When you run `sails lift`, your app will still use a local `./node_modules/sails` dependency if it exists,');
+  console.error('but if it doesn\'t, the app will run with the global sails instead!');
+  return;
+}//-•
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
-/**
-* Extra app middlewares
-*/
-app.use(session({ secret: process.env.SESSION_KEY }));
-app.use(csrf());
 
-/**
-* Assign route middlewares
-*/
-app.use('/', index);
-app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-    let err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-// error handler
-app.use((err, req, res, next) => {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
-});
-
-module.exports = app;
+// Start server
+sails.lift(rc('sails'));
