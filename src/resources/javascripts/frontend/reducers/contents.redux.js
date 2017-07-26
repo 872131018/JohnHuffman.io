@@ -1,12 +1,15 @@
 const initialState = {
-    about: [],
+    abouts: [],
     interests: []
 }
 
 export default function(contents = initialState, action) {
     switch(action.type) {
-        case 'SET_CONTENTS':
-            contents = action.data;
+        case 'SET_ABOUTS':
+            contents.abouts = action.data;
+            break;
+        case 'SET_INTERESTS':
+            contents.interests = action.data;
             break;
         default:
             break;

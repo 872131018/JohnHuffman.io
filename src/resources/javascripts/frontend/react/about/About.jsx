@@ -4,7 +4,7 @@ import Sections from './Sections';
 
 const props = (store) => {
     return {
-        contents: store.ContentStore.about
+        contents: store.ContentStore.abouts
     };
 };
 

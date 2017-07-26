@@ -8,7 +8,7 @@ class Sections extends React.Component {
 
     render() {
         const sections = this.props.contents.map((content) => {
-            return <Section key={ content._id.toString() } content={ content }/>;
+            return <Section key={ content.id.toString() } content={ content }/>;
         });
 
         return (

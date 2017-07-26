@@ -24,6 +24,17 @@ module.exports.bootstrap = function(done) {
         });
     }
 
+    for(var seed of seeds.interests) {
+        Interest.create({
+            key: seed.key,
+            header: seed.header,
+            interest: seed.interest,
+            group: seed.group
+        }).exec(function(err) {
+            //
+        });
+    }
+
 
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)

@@ -10,7 +10,7 @@ class List extends React.Component {
         const interests = this.props.contents.map((content) => {
             return (
                 <div className="w3-panel"
-                    key={ content._id.toString() }>
+                    key={ content.id.toString() }>
                     <Interest content={ content }/>
                 </div>
             );

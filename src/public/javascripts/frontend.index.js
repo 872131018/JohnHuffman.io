@@ -13006,7 +13006,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 */
 
 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-CSRF-TOKEN'] = document.head.querySelector('meta[name="csrf-token"]').content;
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-CSRF-Token'] = document.head.querySelector('meta[name="csrf-token"]').content;
 window.axios = __WEBPACK_IMPORTED_MODULE_0_axios___default.a;
 /**
 * React and app components
@@ -29432,12 +29432,13 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Loading__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navigation_Navigation__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hero_Hero__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__about_About__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__interests_Interests__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__contact_Contact__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Loading__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_Navigation__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hero_Hero__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__about_About__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interests_Interests__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__contact_Contact__ = __webpack_require__(304);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29454,6 +29455,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+var props = function props(store) {
+    return {
+        loading: store.ServiceStore
+    };
+};
+
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
@@ -29467,8 +29475,13 @@ var App = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             store.dispatch({ type: 'SERVICE_LOADING' });
-            axios.get(window.location).then(function (response) {
-                store.dispatch({ type: 'SET_CONTENTS', data: response.data });
+            axios.get(window.baseUrl + '/content/find').then(function (response) {
+                store.dispatch({ type: 'SET_ABOUTS', data: response.data });
+                store.dispatch({ type: 'SERVICE_FINISHED' });
+            });
+            store.dispatch({ type: 'SERVICE_LOADING' });
+            axios.get(window.baseUrl + '/interest/find').then(function (response) {
+                store.dispatch({ type: 'SET_INTERESTS', data: response.data });
                 store.dispatch({ type: 'SERVICE_FINISHED' });
             });
 
@@ -29477,20 +29490,18 @@ var App = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var isLoading = store.getState().ServiceStore;
-
-            return isLoading ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            return this.props.loading != 0 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Loading__["a" /* default */], null)
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Loading__["a" /* default */], null)
             ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__navigation_Navigation__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__hero_Hero__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__about_About__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__interests_Interests__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__contact_Contact__["a" /* default */], null)
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__navigation_Navigation__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__hero_Hero__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__about_About__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__interests_Interests__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__contact_Contact__["a" /* default */], null)
             );
         }
     }]);
@@ -29498,7 +29509,7 @@ var App = function (_React$Component) {
     return App;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (App);
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(props)(App));
 
 /***/ }),
 /* 291 */
@@ -29893,7 +29904,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var props = function props(store) {
     return {
-        contents: store.ContentStore.about
+        contents: store.ContentStore.abouts
     };
 };
 
@@ -29963,7 +29974,7 @@ var Sections = function (_React$Component) {
         key: 'render',
         value: function render() {
             var sections = this.props.contents.map(function (content) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Section__["a" /* default */], { key: content._id.toString(), content: content });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Section__["a" /* default */], { key: content.id.toString(), content: content });
             });
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30127,7 +30138,7 @@ var List = function (_React$Component) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'w3-panel',
-                        key: content._id.toString() },
+                        key: content.id.toString() },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Interest__["a" /* default */], { content: content })
                 );
             });
@@ -30557,7 +30568,7 @@ var reducers = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers
 
 "use strict";
 var initialState = {
-    about: [],
+    abouts: [],
     interests: []
 };
 
@@ -30566,8 +30577,11 @@ var initialState = {
     var action = arguments[1];
 
     switch (action.type) {
-        case 'SET_CONTENTS':
-            contents = action.data;
+        case 'SET_ABOUTS':
+            contents.abouts = action.data;
+            break;
+        case 'SET_INTERESTS':
+            contents.interests = action.data;
             break;
         default:
             break;
