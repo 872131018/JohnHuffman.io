@@ -1,7 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Interest from './Interest';
 
-class List extends React.Component {
+const props = (store) => {
+    return {
+        contents: store.ContentStore.interests
+    };
+};
+
+class Interests extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -17,11 +24,14 @@ class List extends React.Component {
         });
 
         return (
-            <div>
-                { interests }
+            <div className="w3-container w3-light-grey">
+                <div className="w3-section w3-center">
+                    <h1>INTERESTS</h1>
+                    { interests }
+                </div>
             </div>
         );
     }
 }
 
-export default List;
+export default connect(props)(Interests);

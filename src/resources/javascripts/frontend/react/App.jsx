@@ -1,11 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Loading from './Loading';
-import Navigation from './navigation/Navigation';
-import Hero from './hero/Hero';
-import About from './about/About';
-import Interests from './interests/Interests';
-import Contact from './contact/Contact';
+import Navigation from './global/navigation/Navigation';
+import Hero from './global/hero/Hero';
+import Contact from './global/contact/Contact';
+import Home from './pages/home/Page';
 
 const props = (store) => {
     return {
@@ -19,6 +19,8 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        console.log("App Mounted!");
+
         store.dispatch({ type: 'SERVICE_LOADING' });
         axios.get(`${ window.baseUrl }/content/find`).then(response => {
             store.dispatch({ type: 'SET_ABOUTS', data: response.data });
@@ -29,25 +31,21 @@ class App extends React.Component {
             store.dispatch({ type: 'SET_INTERESTS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });
-
-        console.log("App Mounted!");
     }
 
     render() {
         return (
-             this.props.loading != 0 ? (
-                <div>
-                    <Loading/>
-                </div>
-            ) : (
+            <Router>
                 <div>
                     <Navigation/>
                     <Hero/>
-                    <About/>
-                    <Interests/>
+                    { this.props.loading != 0 ?
+                        <Loading/> :
+                        <Route exact path='/' component={Home}/>
+                    }
                     <Contact/>
                 </div>
-            )
+            </Router>
         );
     }
 }

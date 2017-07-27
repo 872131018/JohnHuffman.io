@@ -38,13 +38,13 @@ const contents = {
         },
         {
             "key": "InterestTwo",
-            "header": "Node Express/Sail/Meteor",
+            "header": "Node Sails/Express/Meteor",
             "interest": "80%",
             "group": "interests"
         },
         {
             "key": "InterestThree",
-            "header": "ES6 React/Angular/Vue/Ember",
+            "header": "ES6 Vue/React/Angular/Ember",
             "interest": "90%",
             "group": "interests"
         },
