@@ -11,26 +11,16 @@
 
 module.exports.bootstrap = function(done) {
 
-    var seeds = require('../database/seeds/Content.js');
-    for(var seed of seeds.about) {
-        Content.create({
-            key: seed.key,
-            icon: seed.icon,
-            header: seed.header,
-            content: seed.content,
-            group: seed.group
-        }).exec(function(err) {
+    const abouts = require('../database/seeds/Abouts.js');
+    for(let seed of abouts) {
+        About.create(seed).exec(function(err, created) {
             //
         });
     }
 
-    for(var seed of seeds.interests) {
-        Interest.create({
-            key: seed.key,
-            header: seed.header,
-            interest: seed.interest,
-            group: seed.group
-        }).exec(function(err) {
+    const interests = require('../database/seeds/Interests.js');
+    for(let seed of interests) {
+        Interest.create(seed).exec(function(err, created) {
             //
         });
     }

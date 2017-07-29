@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import About from './about/About';
+import Abouts from './abouts/Abouts';
 import Interests from './interests/Interests';
 
 class Page extends React.Component {
@@ -11,7 +11,7 @@ class Page extends React.Component {
     render() {
         return (
             <div>
-                <About/>
+                <Abouts/>
                 <Interests/>
             </div>
         );
