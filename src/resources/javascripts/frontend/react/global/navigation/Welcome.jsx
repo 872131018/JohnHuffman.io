@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Welcome extends React.Component {
+class Welcome extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <span className="w3-bar-item w3-button w3-wide w3-left">
@@ -13,3 +13,5 @@ export default class Welcome extends React.Component {
         );
     }
 }
+
+export default Welcome;

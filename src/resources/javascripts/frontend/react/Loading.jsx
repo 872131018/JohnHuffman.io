@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Loading extends React.Component {
+class Loading extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    
     render() {
         return (
             <div className="atom">
@@ -19,3 +19,5 @@ export default class Loading extends React.Component {
         );
     }
 }
+
+export default Loading;

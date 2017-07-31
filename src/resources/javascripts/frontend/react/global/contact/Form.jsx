@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Checkbox from './Checkbox';
 import Input from './Input';
+import Checkbox from './Checkbox';
 
 const props = (store) => {
     return {

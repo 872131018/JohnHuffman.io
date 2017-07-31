@@ -2,11 +2,11 @@ import React from 'react';
 import Desktop from './Desktop';
 import Mobile from './Mobile';
 
-export default class Navigation extends React.Component {
+class Navigation extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <div className="w3-top w3-bar w3-light-grey w3-opacity">
@@ -20,3 +20,5 @@ export default class Navigation extends React.Component {
         );
     }
 }
+
+export default Navigation;

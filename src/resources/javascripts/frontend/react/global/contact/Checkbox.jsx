@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Content extends React.Component {
+class Checkbox extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -23,3 +23,5 @@ export default class Content extends React.Component {
         );
     }
 }
+
+export default Checkbox;

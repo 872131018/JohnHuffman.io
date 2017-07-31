@@ -2,7 +2,7 @@ import React from 'react';
 import Welcome from './Welcome';
 import Route from './Route';
 
-export default class Desktop extends React.Component {
+class Desktop extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -18,3 +18,5 @@ export default class Desktop extends React.Component {
         );
     }
 }
+
+export default Desktop;

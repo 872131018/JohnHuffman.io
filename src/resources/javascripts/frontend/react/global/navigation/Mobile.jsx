@@ -3,7 +3,7 @@ import Welcome from './Welcome';
 import Hamburger from './Hamburger';
 import Route from './Route';
 
-export default class Mobile extends React.Component {
+class Mobile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,3 +36,5 @@ export default class Mobile extends React.Component {
         );
     }
 }
+
+export default Mobile;

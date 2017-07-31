@@ -29888,16 +29888,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Header = function (_React$Component) {
-    _inherits(Header, _React$Component);
+var Hero = function (_React$Component) {
+    _inherits(Hero, _React$Component);
 
-    function Header() {
-        _classCallCheck(this, Header);
+    function Hero(props) {
+        _classCallCheck(this, Hero);
 
-        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Hero.__proto__ || Object.getPrototypeOf(Hero)).call(this, props));
     }
 
-    _createClass(Header, [{
+    _createClass(Hero, [{
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29908,10 +29908,10 @@ var Header = function (_React$Component) {
         }
     }]);
 
-    return Header;
+    return Hero;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Header);
+/* harmony default export */ __webpack_exports__["a"] = (Hero);
 
 /***/ }),
 /* 301 */
@@ -30111,8 +30111,8 @@ var Content = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Checkbox__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Input__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Input__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Checkbox__ = __webpack_require__(305);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30153,25 +30153,25 @@ var Form = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'w3-panel' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Input__["a" /* default */], { label: 'Name',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Name',
                         value: this.props.name })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'w3-panel' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Input__["a" /* default */], { label: 'Email',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Email',
                         value: this.props.email })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'w3-panel' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Input__["a" /* default */], { label: 'Message',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Message',
                         value: this.props.message })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'w3-panel' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Checkbox__["a" /* default */], {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Checkbox__["a" /* default */], {
                         checked: this.props.likes })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30205,16 +30205,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Content = function (_React$Component) {
-    _inherits(Content, _React$Component);
+var Checkbox = function (_React$Component) {
+    _inherits(Checkbox, _React$Component);
 
-    function Content(props) {
-        _classCallCheck(this, Content);
+    function Checkbox(props) {
+        _classCallCheck(this, Checkbox);
 
-        return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
+        return _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this, props));
     }
 
-    _createClass(Content, [{
+    _createClass(Checkbox, [{
         key: "render",
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30245,10 +30245,10 @@ var Content = function (_React$Component) {
         }
     }]);
 
-    return Content;
+    return Checkbox;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Content);
+/* harmony default export */ __webpack_exports__["a"] = (Checkbox);
 
 /***/ }),
 /* 306 */
@@ -30267,16 +30267,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Content = function (_React$Component) {
-    _inherits(Content, _React$Component);
+var Input = function (_React$Component) {
+    _inherits(Input, _React$Component);
 
-    function Content(props) {
-        _classCallCheck(this, Content);
+    function Input(props) {
+        _classCallCheck(this, Input);
 
-        return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
+        return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
     }
 
-    _createClass(Content, [{
+    _createClass(Input, [{
         key: "render",
         value: function render() {
             var _this2 = this;
@@ -30300,10 +30300,10 @@ var Content = function (_React$Component) {
         }
     }]);
 
-    return Content;
+    return Input;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Content);
+/* harmony default export */ __webpack_exports__["a"] = (Input);
 
 /***/ }),
 /* 307 */
@@ -30329,10 +30329,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Page = function (_React$Component) {
     _inherits(Page, _React$Component);
 
-    function Page() {
+    function Page(props) {
         _classCallCheck(this, Page);
 
-        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, props));
     }
 
     _createClass(Page, [{

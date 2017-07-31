@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Hamburger extends React.Component {
+class Hamburger extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <button className="w3-bar-item w3-button w3-right">
@@ -13,3 +13,5 @@ export default class Hamburger extends React.Component {
         );
     }
 }
+
+export default Hamburger;

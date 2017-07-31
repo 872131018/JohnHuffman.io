@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class Route extends React.Component {
+class Route extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <Link className="w3-bar-item w3-button w3-right" to={ this.props.route }>
@@ -14,3 +14,5 @@ export default class Route extends React.Component {
         );
     }
 }
+
+export default Route;
