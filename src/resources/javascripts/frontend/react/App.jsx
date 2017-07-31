@@ -41,7 +41,7 @@ class App extends React.Component {
                     <Hero/>
                     { this.props.loading != 0 ?
                         <Loading/> :
-                        <Route exact path='/' component={Home}/>
+                        <Route exact path='/' component={ Home }/>
                     }
                     <Contact/>
                 </div>

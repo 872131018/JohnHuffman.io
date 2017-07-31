@@ -19,6 +19,9 @@ services:
             - mongo
         volumes:
             - ./src:/var/www/html
+        environment:
+            - PASSWORD=
+            - APITOKEN=
     mongo:
         container_name: mongo
         image: mongo

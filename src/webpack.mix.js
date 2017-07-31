@@ -28,3 +28,7 @@ mix.combine([
 * JAVASCRIPTS FRONTEND
 */
 mix.react('resources/javascripts/frontend/index.js', 'public/javascripts/frontend.index.js');
+/**
+* JAVASCRIPTS LOGIN
+*/
+mix.react('resources/javascripts/login/index.js', 'public/javascripts/login.index.js');

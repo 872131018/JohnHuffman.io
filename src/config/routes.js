@@ -20,8 +20,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'index'
+  'get /': {
+    view: 'frontend/index'
+  },
+
+  'post /': 'InquiryController.store',
+
+  'get /login': {
+    view: 'login/index'
   },
 
 

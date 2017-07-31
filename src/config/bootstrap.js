@@ -25,6 +25,15 @@ module.exports.bootstrap = function(done) {
         });
     }
 
+    User.create({
+        name: 'John Huffman',
+        email: 'j-huffman@hotmail.com',
+        password: process.env.PASSWORD,
+        apiToken: process.env.APITOKEN
+    }).exec(function(err, created) {
+        //
+    });
+
 
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
