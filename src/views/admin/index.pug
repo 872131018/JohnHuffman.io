@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width initial-scale=1.0')
+        meta(name='description' content='A page for me, John Huffman.')
+        meta(name='csrf-token' content=_csrf)
+        meta(name='api-token' content=apiToken)
+        link(href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+        link(href="/stylesheets/frontend.css" type="text/css" rel='stylesheet')
+        script.
+            window.baseUrl = '#{ baseUrl }'
+    body
+        div(id='app')
+
+        //- SCRIPTS HERE
+        script(src='/javascripts/admin.index.js' type='text/javascript')

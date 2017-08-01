@@ -46,7 +46,8 @@ module.exports.bootstrap = function(done) {
         email: 'j-huffman@hotmail.com',
         //password: process.env.PASSWORD,
         password: 'password',
-        apiToken: process.env.APITOKEN
+        //apiToken: process.env.APITOKEN
+        apiToken: 'asdf1234'
     }).exec(function(err) {
         //
     });

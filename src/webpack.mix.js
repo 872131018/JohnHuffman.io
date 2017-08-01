@@ -32,3 +32,7 @@ mix.react('resources/javascripts/frontend/index.js', 'public/javascripts/fronten
 * JAVASCRIPTS LOGIN
 */
 mix.react('resources/javascripts/login/index.js', 'public/javascripts/login.index.js');
+/**
+* JAVASCRIPTS ADMIN
+*/
+mix.react('resources/javascripts/admin/index.js', 'public/javascripts/admin.index.js');
