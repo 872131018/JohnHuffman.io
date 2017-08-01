@@ -585,10 +585,26 @@ body, html {
     line-height: 1.8;
 }
 /* Full height image header */
-.bgimg {
+.bgimg1 {
     background-position: center;
     background-size: cover;
     background-image: url("../images/mac.jpg");
-    min-height: 100%;
-    height: 800px;
+    height: 600px;
+    width: 100%;
+}
+/* Full height image header */
+.bgimg2 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/laptop.jpg");
+    height: 600px;
+    width: 100%;
+}
+/* Full height image header */
+.bgimg3 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/cpu.jpg");
+    height: 600px;
+    width: 100%;
 }

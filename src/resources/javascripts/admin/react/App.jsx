@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Loading from './Loading';
 import Navigation from './global/navigation/Navigation';
+import Hero from './global/hero/Hero';
 import Dashboard from './pages/dashboard/Page';
 
 const props = (store) => {
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Router>
                 <div>
                     <Navigation/>
+                    <Hero/>
                     { this.props.loading != 0 ?
                         <Loading/> :
                         <Route exact path='/admin' component={ Dashboard }/>

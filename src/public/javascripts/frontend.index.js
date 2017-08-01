@@ -29420,8 +29420,8 @@ __WEBPACK_IMPORTED_MODULE_3_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_services_redux__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_contents_redux__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_services_redux__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_contents_redux__ = __webpack_require__(294);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reducers_forms_redux__ = __webpack_require__(295);
 
 
@@ -29438,6 +29438,27 @@ var reducers = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers
 
 /***/ }),
 /* 293 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+    var loading = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'SERVICE_LOADING':
+            loading++;
+            break;
+        case 'SERVICE_FINISHED':
+            loading--;
+        default:
+            break;
+    }
+    return JSON.parse(JSON.stringify(loading));
+});
+
+/***/ }),
+/* 294 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29461,27 +29482,6 @@ var initialState = {
             break;
     }
     return JSON.parse(JSON.stringify(contents));
-});
-
-/***/ }),
-/* 294 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-    var loading = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    var action = arguments[1];
-
-    switch (action.type) {
-        case 'SERVICE_LOADING':
-            loading++;
-            break;
-        case 'SERVICE_FINISHED':
-            loading--;
-        default:
-            break;
-    }
-    return JSON.parse(JSON.stringify(loading));
 });
 
 /***/ }),
@@ -29904,7 +29904,7 @@ var Hero = function (_React$Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'w3-display-container bgimg' },
+                { className: 'w3-display-container bgimg1' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Content__["a" /* default */], null)
             );
         }
