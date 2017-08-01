@@ -46,4 +46,8 @@ module.exports.policies = {
   //
   // },
 
+  'AdminController': {
+    '*': 'isAuthenticated'
+  },
+
 };

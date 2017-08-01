@@ -15,19 +15,22 @@ class Form extends React.Component {
     }
 
     render() {
+        const csrf = document.head.querySelector('meta[name="csrf-token"]').content;
+
         return (
             <div className="w3-content" style={{maxWidth: '500px'}}>
-                <div className="w3-panel">
-                    <Input label="Email"
-                        type='text'
-                        value={ this.props.email }/>
-                </div>
-                <div className="w3-panel">
-                    <Input label="Password"
-                        type='password'
-                        value={ this.props.password }/>
-                </div>
-                <button className="w3-button w3-right w3-black">Login</button>
+                <form action={ window.location } method="POST">
+                    <div className="w3-panel">
+                        <Input label="Email" type='text' name='email'
+                            value={ this.props.email }/>
+                    </div>
+                    <div className="w3-panel">
+                        <Input label="Password" type='password' name='password'
+                            value={ this.props.password }/>
+                    </div>
+                    <input type='hidden' name="_csrf" value={ csrf }/>
+                    <button className="w3-button w3-right w3-black" type="submit">Login</button>
+                </form>
             </div>
         );
     }

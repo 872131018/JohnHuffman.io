@@ -8,7 +8,9 @@ class Input extends React.Component {
     render() {
         return (
             <div className="w3-section">
-                <input className="w3-input" type={ this.props.type }
+                <input className="w3-input"
+                    type={ this.props.type }
+                    name={ this.props.name }
                     value={ this.props.value }
                     onChange={ (event) => store.dispatch({
                         type: `SET_${ this.props.label.toUpperCase() }`,

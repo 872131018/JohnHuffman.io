@@ -11,7 +11,10 @@ module.exports = {
         name: { type: 'string' },
         email: { type: 'string' },
         password: { type: 'string' },
-        apiToken: { type: 'string' }
+        apiToken: { type: 'string' },
+    },
+    customToJSON: function() {
+        return _.omit(this, 'password');
     }
 
 };
