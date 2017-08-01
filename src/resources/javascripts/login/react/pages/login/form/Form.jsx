@@ -5,7 +5,8 @@ import Input from './Input';
 const props = (store) => {
     return {
         email: store.FormStore.email,
-        password: store.FormStore.password
+        password: store.FormStore.password,
+        errors: store.ErrorStore.errors
     };
 };
 
@@ -16,10 +17,14 @@ class Form extends React.Component {
 
     render() {
         const csrf = document.head.querySelector('meta[name="csrf-token"]').content;
+        const errors = this.props.errors;
 
         return (
             <div className="w3-content" style={{maxWidth: '500px'}}>
                 <form action={ window.location } method="POST">
+                    { errors &&
+                        <div className="w3-panel w3-text-red">{ errors }</div> 
+                    }
                     <div className="w3-panel">
                         <Input label="Email" type='text' name='email'
                             value={ this.props.email }/>

@@ -29375,7 +29375,7 @@ var reducers = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers
 
 "use strict";
 var initialState = {
-    errors: []
+    errors: window.errors
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
@@ -29383,9 +29383,6 @@ var initialState = {
     var action = arguments[1];
 
     switch (action.type) {
-        case 'SET_ERRORS':
-            errors.abouts = action.data;
-            break;
         default:
             break;
     }
@@ -29461,13 +29458,6 @@ var App = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             console.log("App Mounted!");
-            /*
-            store.dispatch({ type: 'SERVICE_LOADING' });
-            axios.get(`${ window.baseUrl }/about/find`).then(response => {
-                store.dispatch({ type: 'SET_ABOUTS', data: response.data });
-                store.dispatch({ type: 'SERVICE_FINISHED' });
-            });
-            */
         }
     }, {
         key: 'render',
@@ -29606,7 +29596,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var props = function props(store) {
     return {
         email: store.FormStore.email,
-        password: store.FormStore.password
+        password: store.FormStore.password,
+        errors: store.ErrorStore.errors
     };
 };
 
@@ -29623,6 +29614,7 @@ var Form = function (_React$Component) {
         key: 'render',
         value: function render() {
             var csrf = document.head.querySelector('meta[name="csrf-token"]').content;
+            var errors = this.props.errors;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -29630,6 +29622,11 @@ var Form = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
                     { action: window.location, method: 'POST' },
+                    errors && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'w3-panel w3-text-red' },
+                        errors
+                    ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'w3-panel' },

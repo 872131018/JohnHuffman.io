@@ -29,8 +29,9 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    passportInit    : require('passport').initialize(),
-    passportSession : require('passport').session(),
+    passportInit: require('passport').initialize(),
+    passportSession: require('passport').session(),
+    flash: require('connect-flash')(),
 
     order: [
        'cookieParser',
@@ -38,6 +39,7 @@ module.exports.http = {
        'passportInit',
        'passportSession',
        'bodyParser',
+       'flash',
     //   'compress',
     //   'poweredBy',
        'router',

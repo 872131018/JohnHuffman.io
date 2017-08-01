@@ -9,7 +9,8 @@ html(lang='en')
         link(href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
         link(href="/stylesheets/frontend.css" type="text/css" rel='stylesheet')
         script.
-            window.baseUrl = '#{ sails.config.custom.baseUrl }'
+            window.baseUrl = '#{ baseUrl }'
+            window.errors = '#{ errors }'
     body
         div(id='app')
 

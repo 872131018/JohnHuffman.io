@@ -7,5 +7,9 @@
 
 module.exports = {
 
+    index: function(req, res) {
+        return res.json(req);
+        //return res.view('frontend/index', { baseUrl: sails.config.custom.baseUrl });
+    }
 
 };

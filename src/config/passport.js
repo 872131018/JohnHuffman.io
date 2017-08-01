@@ -19,18 +19,14 @@ passport.use(new LocalStrategy({
             if (err) {
                 return done(err);
             }
-            if (!user) {
-                return done(null, false, { message: 'Incorrect email.' });
-            }
-            if(password != user.password) {
+            if (!user || password != user.password) {
                 return done(null, false, {
-                    message: 'Invalid Password'
-                });
-            } else {
-                return done(null, user, {
-                    message: 'Logged In Successfully'
+                    message: 'Invalid email or password'
                 });
             }
+            return done(null, user, {
+                message: 'Logged In Successfully'
+            });
         });
     }
 ));

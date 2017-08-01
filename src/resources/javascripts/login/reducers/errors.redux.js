@@ -1,12 +1,9 @@
 const initialState = {
-    errors: []
+    errors: window.errors
 }
 
 export default function(errors = initialState, action) {
     switch(action.type) {
-        case 'SET_ERRORS':
-            errors.abouts = action.data;
-            break;
         default:
             break;
     }
