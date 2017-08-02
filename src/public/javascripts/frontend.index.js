@@ -29497,26 +29497,26 @@ var initialState = {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
-    var forms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var form = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
     switch (action.type) {
         case 'SET_NAME':
-            forms.name = action.data;
+            form.name = action.data;
             break;
         case 'SET_EMAIL':
-            forms.email = action.data;
+            form.email = action.data;
             break;
         case 'SET_MESSAGE':
-            forms.message = action.data;
+            form.message = action.data;
             break;
         case 'SET_LIKES':
-            forms.likes = action.data;
+            form.likes = action.data;
             break;
         default:
             break;
     }
-    return JSON.parse(JSON.stringify(forms));
+    return JSON.parse(JSON.stringify(form));
 });
 
 /***/ }),
@@ -30143,10 +30143,20 @@ var Form = function (_React$Component) {
     function Form(props) {
         _classCallCheck(this, Form);
 
-        return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
+
+        _this.submit = _this.submit.bind(_this);
+        return _this;
     }
 
     _createClass(Form, [{
+        key: 'submit',
+        value: function submit() {
+            axios.post(window.baseUrl + '/inquiry', store.getState().FormStore).then(function (response) {
+                //@TODO: something here, idk what
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -30178,8 +30188,9 @@ var Form = function (_React$Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
-                    { className: 'w3-button w3-right w3-black' },
-                    'Send'
+                    { className: 'w3-button w3-right w3-black',
+                        onClick: this.submit },
+                    'Submit'
                 )
             );
         }

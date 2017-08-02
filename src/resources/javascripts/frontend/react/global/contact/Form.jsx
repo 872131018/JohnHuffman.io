@@ -15,6 +15,14 @@ const props = (store) => {
 class Form extends React.Component {
     constructor(props) {
         super(props);
+
+        this.submit = this.submit.bind(this);
+    }
+
+    submit() {
+        axios.post(`${ window.baseUrl }/inquiry`, store.getState().FormStore).then(response => {
+            //@TODO: something here, idk what
+        });
     }
 
     render() {
@@ -36,7 +44,9 @@ class Form extends React.Component {
                     <Checkbox
                         checked={ this.props.likes }/>
                 </div>
-                <button className="w3-button w3-right w3-black">Send</button>
+                <button className="w3-button w3-right w3-black"
+                    onClick={ this.submit }>Submit
+                </button>
             </div>
         );
     }
