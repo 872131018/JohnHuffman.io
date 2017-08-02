@@ -5,6 +5,7 @@ import Loading from './Loading';
 import Navigation from './global/navigation/Navigation';
 import Hero from './global/hero/Hero';
 import Dashboard from './pages/dashboard/Page';
+import Inquiries from './pages/inquiries/Page';
 
 const props = (store) => {
     return {
@@ -35,7 +36,10 @@ class App extends React.Component {
                     <Hero/>
                     { this.props.loading != 0 ?
                         <Loading/> :
-                        <Route exact path='/admin' component={ Dashboard }/>
+                        <div className="w3-content">
+                            <Route exact path='/admin' component={ Dashboard }/>
+                            <Route exact path='/inquiries' component={ Inquiries }/>
+                        </div>
                     }
                 </div>
             </Router>

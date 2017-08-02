@@ -27,9 +27,9 @@ class Mobile extends React.Component {
                 </div>
                 { this.state.toggle &&
                     <div className="w3-bar-block">
-                        <Route route="/" name="HOME" icon="home"/>
-                        <Route route="/work" name="WORK" icon="cogs"/>
-                        <Route route="/contact" name="CONTACT" icon="commenting-o"/>
+                        <Route route="/" name="Home" icon="home"/>
+                        <Route route="/work" name="Work" icon="cogs"/>
+                        <Route route="/contact" name="Contact" icon="commenting-o"/>
                     </div>
                 }
             </div>

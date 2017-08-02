@@ -6,14 +6,12 @@ class Desktop extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <div>
                 <Welcome/>
-                <Route route="/" name="HOME" icon="home"/>
-                <Route route="/work" name="WORK" icon="cogs"/>
-                <Route route="/contact" name="CONTACT" icon="commenting-o"/>
+                <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
             </div>
         );
     }

@@ -605,6 +605,21 @@ body, html {
     background-position: center;
     background-size: cover;
     background-image: url("../images/cpu.jpg");
-    height: 600px;
+    height: 200px;
     width: 100%;
+}
+.table {
+    display: table;
+}
+.row {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+.hundred {
+    width: 100%;
+}
+.v-align {
+    vertical-align: middle;
 }
