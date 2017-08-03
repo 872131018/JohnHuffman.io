@@ -6,8 +6,10 @@
   "keywords": [],
   "dependencies": {
     "async": "2.5.0",
+    "chartist": "^0.11.0",
     "connect-flash": "^0.1.1",
     "consolidate": "^0.14.5",
+    "express-device": "^0.4.2",
     "lodash": "4.17.4",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",

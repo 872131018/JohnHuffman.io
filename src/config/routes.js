@@ -24,6 +24,8 @@ module.exports.routes = {
 
   'post /': 'InquiryController.store',
 
+  'post /analytic/store': 'AnalyticController.store',
+
   'get /login': 'Auth/LoginController.index',
 
   'post /login': 'Auth/LoginController.login',

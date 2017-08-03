@@ -36,12 +36,4 @@ class Page extends React.Component {
     }
 }
 
-/*
-<Inquiry
-    v-bind:properties="properties"
-    v-for="inquiry in inquiries"
-    v-bind:key="inquiry.id"
-    v-bind:inquiry="inquiry">
-</Inquiry>
-*/
 export default connect(props)(Page);

@@ -11,6 +11,7 @@ class Desktop extends React.Component {
         return (
             <div>
                 <Welcome/>
+                <Route route="/admin" name="Dashboard" icon="tachometer"/>
                 <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
             </div>
         );

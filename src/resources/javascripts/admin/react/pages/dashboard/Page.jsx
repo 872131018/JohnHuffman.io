@@ -1,4 +1,5 @@
 import React from 'react';
+import LineGraph from './LineGraph';
 
 class Page extends React.Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Page extends React.Component {
     render() {
         return (
             <div>
-                ADMIN AREA
+                <h3>Analytics:</h3>
+                <LineGraph></LineGraph>
             </div>
         );
     }
