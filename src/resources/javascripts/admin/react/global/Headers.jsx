@@ -15,7 +15,7 @@ class Headers extends React.Component {
         });
 
         return (
-            <div className="row w3-black w3-text-amber">
+            <div className="row w3-blue w3-text-white">
                 { headers }
             </div>
         );

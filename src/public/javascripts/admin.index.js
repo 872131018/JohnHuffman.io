@@ -29500,17 +29500,17 @@ var initialState = {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
-    var inquiries = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
     switch (action.type) {
-        case 'SET_ABOUTS':
-            contents.abouts = action.data;
+        case 'SET_INQUIRIES':
+            state.inquiries = action.data;
             break;
         default:
             break;
     }
-    return JSON.parse(JSON.stringify(inquiries));
+    return JSON.parse(JSON.stringify(state));
 });
 
 /***/ }),
@@ -29565,8 +29565,8 @@ var App = function (_React$Component) {
             console.log("App Mounted!");
 
             store.dispatch({ type: 'SERVICE_LOADING' });
-            axios.get(window.baseUrl + '/about/find').then(function (response) {
-                //store.dispatch({ type: 'SET_ABOUTS', data: response.data });
+            axios.get(window.baseUrl + '/inquiry/find').then(function (response) {
+                store.dispatch({ type: 'SET_INQUIRIES', data: response.data });
                 store.dispatch({ type: 'SERVICE_FINISHED' });
             });
         }
@@ -29963,6 +29963,7 @@ var Page = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_Headers__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Inquiry__ = __webpack_require__(339);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29975,10 +29976,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var props = function props(store) {
     return {
         headers: store.InquiryStore.properties,
-        inquiries: []
+        inquiries: store.InquiryStore.inquiries
     };
 };
 
@@ -29995,6 +29997,10 @@ var Page = function (_React$Component) {
         key: 'render',
         value: function render() {
             var headers = this.props.headers;
+            var inquiries = this.props.inquiries.map(function (inquiry) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Inquiry__["a" /* default */], { inquiry: inquiry,
+                    key: inquiry.id.toString() });
+            });
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -30007,7 +30013,8 @@ var Page = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'table hundred' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__global_Headers__["a" /* default */], { headers: headers })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__global_Headers__["a" /* default */], { headers: headers }),
+                    inquiries
                 )
             );
         }
@@ -30068,7 +30075,7 @@ var Headers = function (_React$Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "row w3-black w3-text-amber" },
+                { className: "row w3-blue w3-text-white" },
                 headers
             );
         }
@@ -30078,6 +30085,71 @@ var Headers = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Headers);
+
+/***/ }),
+/* 339 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Inquiry = function (_React$Component) {
+    _inherits(Inquiry, _React$Component);
+
+    function Inquiry(props) {
+        _classCallCheck(this, Inquiry);
+
+        return _possibleConstructorReturn(this, (Inquiry.__proto__ || Object.getPrototypeOf(Inquiry)).call(this, props));
+    }
+
+    _createClass(Inquiry, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "row w3-hover-black" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "cell v-align w3-padding-16 w3-center" },
+                    this.props.inquiry.name
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "cell v-align w3-padding-16 w3-center" },
+                    this.props.inquiry.email
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "cell v-align w3-padding-16 w3-center" },
+                    this.props.inquiry.message
+                ),
+                this.props.inquiry.likes ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "cell v-align w3-padding-16 w3-center" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-2x fa-thumbs-o-up" })
+                ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "cell v-align w3-padding-16 w3-center" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-2x fa-thumbs-o-down" })
+                )
+            );
+        }
+    }]);
+
+    return Inquiry;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Inquiry);
 
 /***/ })
 /******/ ]);

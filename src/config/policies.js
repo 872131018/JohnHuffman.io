@@ -46,8 +46,11 @@ module.exports.policies = {
   //
   // },
 
-  'AdminController': {
-    '*': 'isAuthenticated'
-  },
+    'AdminController': {
+        '*': 'isAuthenticated'
+    },
+    'InquiryController': {
+        'find': ['isAuthenticated', 'isAuthorized']
+    }
 
 };

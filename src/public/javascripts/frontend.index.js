@@ -30012,7 +30012,7 @@ var Contact = function (_React$Component) {
                 { className: 'w3-container' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'w3-section' },
+                    { className: 'w3-content' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Content__["a" /* default */], null),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Form__["a" /* default */], null)
                 )
@@ -30413,7 +30413,7 @@ var Abouts = function (_React$Component) {
                 { className: 'w3-container' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'w3-section w3-center' },
+                    { className: 'w3-content w3-center' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h1',
                         null,
@@ -30535,7 +30535,7 @@ var Interests = function (_React$Component) {
                 { className: 'w3-container w3-light-grey' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'w3-section w3-center' },
+                    { className: 'w3-content w3-center' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h1',
                         null,

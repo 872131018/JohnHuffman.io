@@ -25,7 +25,7 @@ class Interests extends React.Component {
 
         return (
             <div className="w3-container w3-light-grey">
-                <div className="w3-section w3-center">
+                <div className="w3-content w3-center">
                     <h1>INTERESTS</h1>
                     { interests }
                 </div>

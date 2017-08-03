@@ -20,7 +20,7 @@ class Abouts extends React.Component {
 
         return (
             <div className="w3-container">
-                <div className="w3-section w3-center">
+                <div className="w3-content w3-center">
                     <h1>ABOUT</h1>
                     { abouts }
                 </div>

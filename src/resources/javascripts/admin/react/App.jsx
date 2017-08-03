@@ -22,8 +22,8 @@ class App extends React.Component {
         console.log("App Mounted!");
 
         store.dispatch({ type: 'SERVICE_LOADING' });
-        axios.get(`${ window.baseUrl }/about/find`).then(response => {
-            //store.dispatch({ type: 'SET_ABOUTS', data: response.data });
+        axios.get(`${ window.baseUrl }/inquiry/find`).then(response => {
+            store.dispatch({ type: 'SET_INQUIRIES', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });
     }

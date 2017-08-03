@@ -1,5 +1,6 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var BearerStrategy = require('passport-http-bearer').Strategy;
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
@@ -16,16 +17,32 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
     }, function(email, password, done) {
         User.findOne({ email: email }).exec(function(err, user) {
-            if (err) {
+            if(err) {
                 return done(err);
             }
-            if (!user || password != user.password) {
+            if(!user || password != user.password) {
                 return done(null, false, {
                     message: 'Invalid email or password'
                 });
             }
             return done(null, user, {
                 message: 'Logged In Successfully'
+            });
+        });
+    }
+));
+
+passport.use(new BearerStrategy(
+    function(token, done) {
+        User.findOne({ apiToken: token }).exec(function(err, user) {
+            if(err) {
+                return done(err);
+            }
+            if(!user) {
+                return done(null, false);
+            }
+            return done(null, user, {
+                message: 'Token Verified'
             });
         });
     }
