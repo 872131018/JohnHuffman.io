@@ -45,7 +45,7 @@ module.exports.http = {
     //   'compress',
     //   'poweredBy',
        'router',
-       //'www',
+       'www',
        'favicon',
     ],
 

@@ -22,7 +22,8 @@ mix.combine([
     'node_modules/w3-css/w3.css',
     'resources/stylesheets/frontend/loader.styles.css',
     'resources/stylesheets/frontend/checkbox.styles.css',
-    'resources/stylesheets/frontend/frontend.css'
+    'resources/stylesheets/frontend/frontend.css',
+    'node_modules/chartist/dist/chartist.min.css',
 ], 'public/stylesheets/frontend.css');
 /**
 * JAVASCRIPTS FRONTEND

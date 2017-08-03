@@ -17,9 +17,7 @@ class LineGraph extends React.Component {
     componentDidMount() {
         new Chartist.Line('#LineChart', {
             labels: this.props.labels,
-            series: [
-                this.props.series
-            ]
+            series: [this.props.series]
         });
     }
 

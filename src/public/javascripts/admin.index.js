@@ -29532,7 +29532,7 @@ var initialState = {
     var action = arguments[1];
 
     switch (action.type) {
-        case 'SET_DASHBOARD':
+        case 'SET_ANALYTICS':
             state.labels = action.data.labels;
             state.series = action.data.series;
             break;
@@ -29592,13 +29592,12 @@ var App = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             console.log("App Mounted!");
-            /*
+
             store.dispatch({ type: 'SERVICE_LOADING' });
-            axios.get(`${ window.baseUrl }/dashboard/find`).then(response => {
-                store.dispatch({ type: 'SET_DASHBOARDS', data: response.data });
+            axios.get(window.baseUrl + '/analytic/find').then(function (response) {
+                store.dispatch({ type: 'SET_ANALYTICS', data: response.data });
                 store.dispatch({ type: 'SERVICE_FINISHED' });
             });
-            */
             store.dispatch({ type: 'SERVICE_LOADING' });
             axios.get(window.baseUrl + '/inquiry/find').then(function (response) {
                 store.dispatch({ type: 'SET_INQUIRIES', data: response.data });

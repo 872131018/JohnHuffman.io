@@ -5,7 +5,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case 'SET_DASHBOARD':
+        case 'SET_ANALYTICS':
             state.labels = action.data.labels;
             state.series = action.data.series;
             break;
