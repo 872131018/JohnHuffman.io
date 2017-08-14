@@ -1,5 +1,6 @@
 import React from 'react';
-import LineGraph from './LineGraph';
+import VisitGraph from './VisitGraph';
+import DownloadGraph from './DownloadGraph';
 
 class Page extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Page extends React.Component {
         return (
             <div>
                 <h3>Analytics:</h3>
-                <LineGraph></LineGraph>
+                <VisitGraph></VisitGraph>
+                <DownloadGraph></DownloadGraph>
             </div>
         );
     }

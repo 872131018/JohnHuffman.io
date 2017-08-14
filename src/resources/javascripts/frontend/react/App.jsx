@@ -21,7 +21,7 @@ class App extends React.Component {
     componentDidMount() {
         console.log("App Mounted!");
 
-        store.dispatch({ type: 'SERVICE_LOADING' });
+        //store.dispatch({ type: 'SERVICE_LOADING' }); @TODO analytic component mounting twice :/
         axios.get(`${ window.baseUrl }/about/find`).then(response => {
             store.dispatch({ type: 'SET_ABOUTS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
@@ -41,7 +41,9 @@ class App extends React.Component {
                     <Hero/>
                     { this.props.loading != 0 ?
                         <Loading/> :
-                        <Route exact path='/' component={ Home }/>
+                        <div>
+                            <Route exact path='/' component={ Home }/>
+                        </div>
                     }
                     <Contact/>
                 </div>

@@ -10,20 +10,38 @@ var moment = require('moment');
 module.exports = {
 
     find: function(req, res) {
-        var labels = [];
         var now = moment();
-        for(let i = 0; i < 10; i++) {
+
+        var labels = [];
+        for(var i = 0; i < 10; i++) {
             labels.unshift(now.subtract(i * 3, 'days').format('MMM, DD'));
         }
 
-        var series = [];
         now = moment();
         var asyncs = [];
-        for(let i = 0; i < 10; i++) {
+        for(var i = 0; i < 10; i++) {
             asyncs.push(function(callback) {
                 var start = now.subtract(i * 3, 'days').valueOf();
                 var end = now.subtract(i * 3 + 3, 'days').valueOf();
                 Analytic.find({
+                    //page: 'Home',
+                    createdAt: {
+                        '>': start,
+                        '<': end
+                    }
+                }).exec(function(err, results) {
+                    callback(null, results.length);
+                });
+            });
+        }
+        /*
+        now = moment();
+        for(var i = 0; i < 10; i++) {
+            asyncs.push(function(callback) {
+                var start = now.subtract(i * 3, 'days').valueOf();
+                var end = now.subtract(i * 3 + 3, 'days').valueOf();
+                Analytic.find({
+                    //page: 'Download',
                     createdAt: {
                         '<': start,
                         '>': end
@@ -33,11 +51,19 @@ module.exports = {
                 });
             });
         }
+        */
         sails.config.globals.async.series(asyncs, function(err, results) {
-            series = results.reverse();
+            var visitSeries = results.slice(0,10).reverse();
+            var downloadSeries = results.slice(10,20).reverse();
             return res.json({
-                labels: labels,
-                series: series
+                visit: {
+                    labels: labels,
+                    series: visitSeries
+                },
+                download: {
+                    labels: labels,
+                    series: downloadSeries
+                }
             });
         });
     },
@@ -55,7 +81,7 @@ module.exports = {
         }
 
         Analytic.create({
-            page: req.params.page,
+            page: req.param('page'),
             device: device,
             ip: req.ip
         }).exec(function(err) {

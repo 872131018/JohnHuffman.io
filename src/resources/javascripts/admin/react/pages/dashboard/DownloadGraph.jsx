@@ -4,18 +4,18 @@ import Chartist from 'chartist';
 
 const props = (store) => {
     return {
-        labels: store.DashboardStore.labels,
-        series: store.DashboardStore.series
+        labels: store.DashboardStore.downloadLabels,
+        series: store.DashboardStore.downloadSeries
     };
 };
 
-class LineGraph extends React.Component {
+class DownloadGraph extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        new Chartist.Line('#LineChart', {
+        new Chartist.Line('#DownloadChart', {
             labels: this.props.labels,
             series: [this.props.series]
         });
@@ -24,11 +24,11 @@ class LineGraph extends React.Component {
     render() {
         return (
             <div>
-                <h3>Visits Last 30 Days</h3>
-                <div id="LineChart"></div>
+                <h3>Downloads Last 30 Days</h3>
+                <div id="DownloadChart"></div>
             </div>
         );
     }
 }
 
-export default connect(props)(LineGraph);
+export default connect(props)(DownloadGraph);

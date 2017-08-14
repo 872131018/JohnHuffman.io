@@ -1,13 +1,17 @@
 const initialState = {
-    labels: [],
-    series: []
+    visitLabels: [],
+    visitSeries: [],
+    downloadLabels: [],
+    downloadSeries: []
 }
 
 export default function(state = initialState, action) {
     switch(action.type) {
         case 'SET_ANALYTICS':
-            state.labels = action.data.labels;
-            state.series = action.data.series;
+            state.visitLabels = action.data.visit.labels;
+            state.visitSeries = action.data.visit.series;
+            state.downloadLabels = action.data.download.labels;
+            state.downloadSeries = action.data.download.series;
             break;
         default:
             break;
