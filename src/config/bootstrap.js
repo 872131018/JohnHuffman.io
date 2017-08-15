@@ -44,10 +44,8 @@ module.exports.bootstrap = function(done) {
     User.create({
         name: 'John Huffman',
         email: 'j-huffman@hotmail.com',
-        //password: process.env.PASSWORD,
-        password: 'password',
-        //apiToken: process.env.APITOKEN
-        apiToken: 'asdf1234'
+        password: process.env.PASSWORD,
+        apiToken: process.env.APITOKEN
     }).exec(function(err) {
         //
     });
