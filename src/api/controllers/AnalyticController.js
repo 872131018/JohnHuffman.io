@@ -83,7 +83,6 @@ module.exports = {
             default:
                 device = 'unknown';
                 break;
-
         }
 
         Analytic.create({
@@ -96,7 +95,6 @@ module.exports = {
             } else {
                 return res.ok();
             }
-
         });
     }
 

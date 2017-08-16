@@ -22,7 +22,7 @@ module.exports.routes = {
 
   'get /': 'Frontend/FrontendController.index',
 
-  'post /': 'InquiryController.store',
+  'post /inquiry': 'InquiryController.store',
 
   'post /analytic/store': 'AnalyticController.store',
 

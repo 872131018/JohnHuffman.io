@@ -11,6 +11,8 @@
     "express-device": "^0.4.2",
     "lodash": "4.17.4",
     "moment": "^2.18.1",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
@@ -22,7 +24,7 @@
   },
   "devDependencies": {
     "axios": "^0.16.2",
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "chartist": "^0.11.0",
