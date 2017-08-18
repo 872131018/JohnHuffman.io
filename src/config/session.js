@@ -40,5 +40,8 @@ module.exports.session = {
     //maxAge: 24 * 60 * 60 * 1000,  // 24 hours
     maxAge: 60 * 60 * 1000 //1 hour
   },
+  adapter: 'connect-redis',
+  host: 'redis',
+  port: 6379
 
 };

@@ -7,6 +7,7 @@
   "dependencies": {
     "async": "2.5.0",
     "connect-flash": "^0.1.1",
+    "connect-redis": "^3.3.0",
     "consolidate": "^0.14.5",
     "express-device": "^0.4.2",
     "lodash": "4.17.4",
@@ -20,7 +21,8 @@
     "sails": "^1.0.0-36",
     "sails-hook-orm": "^2.0.0-21",
     "sails-hook-sockets": "^1.4.0",
-    "sails-mongo": "^1.0.0-9"
+    "sails-mongo": "^1.0.0-9",
+    "sails-redis": "^1.0.0-0"
   },
   "devDependencies": {
     "axios": "^0.16.2",

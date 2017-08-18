@@ -7,16 +7,17 @@ services:
         ports:
             - 80:80
         links:
-            - express
+            - node
             - mongo
         volumes:
             - ./src/public:/var/www/html/public
-    express:
-        container_name: express
+    node:
+        container_name: node
         build:
-            context: ./express
+            context: ./node
         links:
             - mongo
+            - redis
         volumes:
             - ./src:/var/www/html
         environment:
@@ -29,3 +30,11 @@ services:
         image: mongo
         ports:
             - 27017:27017
+        volumes:
+          - ./data:/data/db
+        environment:
+          - MONGO_INITDB_ROOT_USERNAME=
+          - MONGO_INITDB_ROOT_PASSWORD=
+    redis:
+        container_name: redis
+        image: redis:latest
