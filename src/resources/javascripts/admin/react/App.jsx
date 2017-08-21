@@ -42,7 +42,7 @@ class App extends React.Component {
                     { this.props.loading != 0 ?
                         <Loading/> :
                         <div className="w3-content">
-                            <Route exact path='/admin' component={ Dashboard }/>
+                            <Route exact path='/dashboard' component={ Dashboard }/>
                             <Route exact path='/inquiries' component={ Inquiries }/>
                         </div>
                     }

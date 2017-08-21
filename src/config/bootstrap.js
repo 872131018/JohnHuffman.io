@@ -15,9 +15,6 @@ module.exports.bootstrap = function(done) {
     * Clear collection
     */
     const abouts = require('../database/seeds/Abouts.js');
-    About.destroy({}).exec(function(err) {
-        //
-    });
     for(let seed of abouts) {
         About.create(seed).exec(function(err) {
             //
@@ -27,9 +24,6 @@ module.exports.bootstrap = function(done) {
     * Clear collection
     */
     const interests = require('../database/seeds/Interests.js');
-    Interest.destroy({}).exec(function(err) {
-        //
-    });
     for(let seed of interests) {
         Interest.create(seed).exec(function(err) {
             //
@@ -38,10 +32,6 @@ module.exports.bootstrap = function(done) {
     /**
     * Clear collection
     */
-    /*
-    User.destroy({}).exec(function(err) {
-        //
-    });
     User.create({
         name: 'John Huffman',
         email: 'j-huffman@hotmail.com',
@@ -50,7 +40,6 @@ module.exports.bootstrap = function(done) {
     }).exec(function(err) {
         //
     });
-    */
 
 
   // It's very important to trigger this callback method when you are finished

@@ -1,5 +1,6 @@
 import React from 'react';
 import Welcome from './Welcome';
+import Logout from './Logout';
 import Hamburger from './Hamburger';
 import Route from './Route';
 
@@ -27,9 +28,9 @@ class Mobile extends React.Component {
                 </div>
                 { this.state.toggle &&
                     <div className="w3-bar-block">
-                        <Route route="/" name="HOME" icon="home"/>
-                        <Route route="/work" name="WORK" icon="cogs"/>
-                        <Route route="/contact" name="CONTACT" icon="commenting-o"/>
+                    <Route route="/dashboard" name="Dashboard" icon="tachometer"/>
+                    <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
+                    <Logout/>
                     </div>
                 }
             </div>

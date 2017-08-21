@@ -3,6 +3,14 @@ import React from 'react';
 class Checkbox extends React.Component {
     constructor(props) {
         super(props);
+
+        this.liked = this.liked.bind(this);
+    }
+
+    liked(event) {
+        store.dispatch({
+            type: 'SET_LIKES',
+            data: event.target.checked });
     }
 
     render() {
@@ -12,9 +20,7 @@ class Checkbox extends React.Component {
                     <label className="switcher">
                         <input className="w3-hide" type="checkbox"
                             checked={ this.props.checked }
-                            onChange={ (event) => store.dispatch({
-                                type: 'SET_LIKES',
-                                data: event.target.checked })}/>
+                            onChange={ this.liked }/>
                         <div className="switcher__indicator"></div>
                         <span>I like JohnHuffman.io</span>
                     </label>

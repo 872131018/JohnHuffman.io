@@ -29664,7 +29664,8 @@ var App = function (_React$Component) {
         value: function componentDidMount() {
             console.log("App Mounted!");
 
-            //store.dispatch({ type: 'SERVICE_LOADING' }); @TODO analytic component mounting twice :/
+            // @TODO analytic component mounting twice :/
+            //store.dispatch({ type: 'SERVICE_LOADING' });
             axios.get(window.baseUrl + '/about/find').then(function (response) {
                 store.dispatch({ type: 'SET_ABOUTS', data: response.data });
                 store.dispatch({ type: 'SERVICE_FINISHED' });
@@ -30063,7 +30064,7 @@ var Content = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'h3',
                     null,
-                    'Human:Colorado:US:Earth'
+                    'Human : Colorado : US : Earth'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'a',
@@ -30333,24 +30334,28 @@ var Input = function (_React$Component) {
     function Input(props) {
         _classCallCheck(this, Input);
 
-        return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
+
+        _this.update = _this.update.bind(_this);
+        return _this;
     }
 
     _createClass(Input, [{
+        key: "update",
+        value: function update(event) {
+            store.dispatch({
+                type: "SET_" + this.props.label.toUpperCase(),
+                data: event.target.value });
+        }
+    }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
-
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
                 { className: "w3-section" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "w3-input", type: "text",
                     value: this.props.value,
-                    onChange: function onChange(event) {
-                        return store.dispatch({
-                            type: "SET_" + _this2.props.label.toUpperCase(),
-                            data: event.target.value });
-                    } }),
+                    onChange: this.update }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "label",
                     { className: "w3-left" },
@@ -30388,33 +30393,39 @@ var Checkbox = function (_React$Component) {
     function Checkbox(props) {
         _classCallCheck(this, Checkbox);
 
-        return _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this, props));
+
+        _this.liked = _this.liked.bind(_this);
+        return _this;
     }
 
     _createClass(Checkbox, [{
-        key: "render",
+        key: 'liked',
+        value: function liked(event) {
+            store.dispatch({
+                type: 'SET_LIKES',
+                data: event.target.checked });
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "w3-section" },
+                'div',
+                { className: 'w3-section' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "w3-display-inline-block demo" },
+                    'div',
+                    { className: 'w3-display-inline-block demo' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        { className: "switcher" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "w3-hide", type: "checkbox",
+                        'label',
+                        { className: 'switcher' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'w3-hide', type: 'checkbox',
                             checked: this.props.checked,
-                            onChange: function onChange(event) {
-                                return store.dispatch({
-                                    type: 'SET_LIKES',
-                                    data: event.target.checked });
-                            } }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "switcher__indicator" }),
+                            onChange: this.liked }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'switcher__indicator' }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
+                            'span',
                             null,
-                            "I like JohnHuffman.io"
+                            'I like JohnHuffman.io'
                         )
                     )
                 )

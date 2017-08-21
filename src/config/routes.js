@@ -30,7 +30,9 @@ module.exports.routes = {
 
   'post /login': 'Auth/LoginController.login',
 
-  'get /admin': 'Admin/AdminController.index',
+  'post /logout': 'Auth/LoginController.logout',
+
+  'get /dashboard': 'Admin/AdminController.index',
 
   'get /inquiries': 'Admin/AdminController.index'
 

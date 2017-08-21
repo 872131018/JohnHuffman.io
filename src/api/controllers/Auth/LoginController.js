@@ -24,7 +24,7 @@ module.exports = {
             }
             req.logIn(user, function(err) {
                 if (err) res.send(err);
-                return res.redirect('/admin');
+                return res.redirect('/dashboard');
             });
 
         })(req, res);
@@ -32,7 +32,7 @@ module.exports = {
 
     logout: function (req, res) {
         req.logout();
-        res.redirect('/');
+        return res.ok();
     }
 
 };
