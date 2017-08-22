@@ -6,13 +6,23 @@ import Route from './Route';
 class Desktop extends React.Component {
     constructor(props) {
         super(props);
+
+        this.logout = this.logout.bind(this);
+    }
+
+    logout() {
+        axios.post(`${ window.baseUrl }/logout`).then(response => {
+            window.location = window.baseUrl;
+        });
     }
 
     render() {
         return (
             <div>
                 <Welcome/>
-                <Logout/>
+                <div onClick={ this.logout }>
+                    <Logout/>
+                </div>
                 <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
                 <Route route="/dashboard" name="Dashboard" icon="tachometer"/>
             </div>

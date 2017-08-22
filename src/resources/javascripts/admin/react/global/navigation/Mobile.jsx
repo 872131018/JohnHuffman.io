@@ -10,12 +10,20 @@ class Mobile extends React.Component {
         this.state = {
             toggle: false
         };
+
         this.openMenu = this.openMenu.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
     openMenu() {
         this.setState((previousState) => {
             return { toggle: !previousState.toggle };
+        });
+    }
+
+    logout() {
+        axios.post(`${ window.baseUrl }/logout`).then(response => {
+            window.location = window.baseUrl;
         });
     }
 
@@ -28,9 +36,11 @@ class Mobile extends React.Component {
                 </div>
                 { this.state.toggle &&
                     <div className="w3-bar-block">
-                    <Route route="/dashboard" name="Dashboard" icon="tachometer"/>
-                    <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
-                    <Logout/>
+                        <Route route="/dashboard" name="Dashboard" icon="tachometer"/>
+                        <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
+                        <div onClick={ this.logout }>
+                            <Logout/>
+                        </div>
                     </div>
                 }
             </div>
