@@ -492,11 +492,22 @@ body, html {
     line-height: 1.8;
 }
 /* Full height image header */
-.bgimg1 {
+.parallaxHero {
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../images/mac.jpg");
     height: 600px;
+    width: 100%;
+}
+.parallax {
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/gypsum.jpg");
+    height: 400px;
     width: 100%;
 }
 /* Full height image header */

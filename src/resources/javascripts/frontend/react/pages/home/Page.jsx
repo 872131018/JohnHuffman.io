@@ -1,18 +1,20 @@
 import React from 'react';
-import Abouts from './abouts/Abouts';
-import Interests from './interests/Interests';
+import Content from './Content';
+import Languages from './languages/Languages';
+import Tools from './tools/Tools';
 import Analytics from '../../global/Analytics';
 
 class Page extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <div>
-                <Abouts/>
-                <Interests/>
+                <Content/>
+                <Languages/>
+                <Tools/>
                 <Analytics page="Home"></Analytics>
             </div>
         );

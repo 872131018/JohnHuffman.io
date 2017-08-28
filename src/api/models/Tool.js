@@ -8,9 +8,7 @@
 module.exports = {
     attributes: {
         key: { type: 'string' },
-        icon: { type: 'string' },
         header: { type: 'string' },
-        content: { type: 'string' },
-        group: { type: 'string' }
+        icon: { type: 'string' }
     }
 };

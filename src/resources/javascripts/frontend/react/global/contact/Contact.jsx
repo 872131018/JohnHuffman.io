@@ -1,4 +1,5 @@
 import React from 'react';
+import Parallax from './Parallax';
 import Content from './Content';
 import Form from './Form';
 
@@ -9,8 +10,9 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <div className="w3-container">
-                <div className="w3-content">
+            <div className="w3-container w3-light-grey">
+                <Parallax/>
+                <div className="w3-content w3-padding-32">
                     <Content/>
                     <Form/>
                 </div>

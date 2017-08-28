@@ -32,10 +32,10 @@ module.exports.bootstrap = function(done) {
                 });
             });
 
-            const abouts = require('../database/seeds/Abouts.js');
-            for(let seed of abouts) {
+            const tools = require('../database/seeds/Tools.js');
+            for(let seed of tools) {
                 asyncs.push(function(callback) {
-                    About.create(seed).then(function(result) {
+                    Tool.create(seed).then(function(result) {
                         callback(null, result);
                     }).catch(function(err) {
                         console.log(err);
@@ -43,10 +43,10 @@ module.exports.bootstrap = function(done) {
                 });
             }
 
-            const interests = require('../database/seeds/Interests.js');
-            for(let seed of interests) {
+            const languages = require('../database/seeds/Languages.js');
+            for(let seed of languages) {
                 asyncs.push(function(callback) {
-                    Interest.create(seed).then(function(result) {
+                    Language.create(seed).then(function(result) {
                         callback(null, result);
                     }).catch(function(err) {
                         console.log(err);

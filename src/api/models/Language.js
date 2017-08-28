@@ -9,7 +9,6 @@ module.exports = {
     attributes: {
         key: { type: 'string' },
         header: { type: 'string' },
-        interest: { type: 'string' },
-        group: { type: 'string' }
+        interest: { type: 'string' }
     }
 };
