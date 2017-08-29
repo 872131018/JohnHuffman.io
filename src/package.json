@@ -13,7 +13,7 @@
     "express-device": "^0.4.2",
     "lodash": "4.17.4",
     "moment": "^2.18.1",
-    "nodemailer": "^4.0.1",
+    "nodemailer": "^4.1.0",
     "nodemailer-smtp-transport": "^2.7.4",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",

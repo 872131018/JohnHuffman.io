@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Tool extends React.Component {
+class Icon extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -13,13 +13,6 @@ class Tool extends React.Component {
             </div>
         );
     }
-    /*
-    <div className="w3-quarter">
-        <i className={ `fa ${ this.props.tool.icon } fa-3x` }></i>
-        <p>{ this.props.tool.header }</p>
-        <p>{ this.props.tool.icon }</p>
-    </div>
-    */
 }
 
-export default Tool;
+export default Icon;

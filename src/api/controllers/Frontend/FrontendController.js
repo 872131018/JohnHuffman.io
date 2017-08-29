@@ -6,9 +6,12 @@
  */
 
 module.exports = {
-    
+
     index: function(req, res) {
-        return res.view('frontend/index', { baseUrl: sails.config.custom.baseUrl });
+        return res.view('frontend/index', {
+            baseUrl: process.env.BASE_URL,
+            googleApiKey: process.env.GOOGLE_API_KEY
+        });
     }
 
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Tool from './Tool';
+import Icon from './Icon';
 
 const props = (store) => {
     return {
@@ -15,14 +15,14 @@ class Tools extends React.Component {
 
     render() {
         const tools = this.props.tools.map((tool) => {
-            return <Tool key={ tool.id.toString() } tool={ tool }/>;
+            return <Icon key={ tool.id.toString() } tool={ tool }/>;
         });
 
         return (
             <div className="w3-container w3-pale-blue">
                 <div className="w3-content w3-padding-32">
                     <div className="w3-section w3-center">
-                        <h1>Developer Toolkit</h1>
+                        <h1>Developer Toolbelt</h1>
                         { tools }
                     </div>
                 </div>

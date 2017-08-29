@@ -5,6 +5,7 @@ import Loading from './Loading';
 import Navigation from './global/navigation/Navigation';
 import Hero from './global/Hero';
 import Contact from './global/contact/Contact';
+import Parallax from './global/Parallax';
 import Home from './pages/home/Page';
 
 const props = (store) => {
@@ -47,6 +48,7 @@ class App extends React.Component {
                             <Route exact path='/' component={ Home }/>
                         </div>
                     }
+                    <Parallax/>
                     <Contact/>
                 </div>
             </Router>

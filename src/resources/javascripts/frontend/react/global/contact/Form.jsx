@@ -28,18 +28,12 @@ class Form extends React.Component {
     render() {
         return (
             <div className="w3-half">
-                <div className="w3-panel">
-                    <Input label="Name"
-                        value={ this.props.name }/>
-                </div>
-                <div className="w3-panel">
-                    <Input label="Email"
-                        value={ this.props.email }/>
-                </div>
-                <div className="w3-panel">
-                    <Input label="Message"
-                        value={ this.props.message }/>
-                </div>
+                <Input label="Name"
+                    value={ this.props.name }/>
+                <Input label="Email"
+                    value={ this.props.email }/>
+                <Input label="Message"
+                    value={ this.props.message }/>
                 <div className="w3-panel">
                     <Checkbox
                         checked={ this.props.likes }/>

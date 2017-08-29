@@ -1,23 +1,18 @@
 import React from 'react';
 
-class Content extends React.Component {
+class Parallax extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
-            <div className="w3-half w3-center">
-                <div className="w3-panel">
-                    <span className="w3-xxlarge w3-bottombar">Contact</span>
-                </div>
-                <div className="w3-panel">
+            <div className="w3-display-container parallax">
+                <div className="w3-display-middle w3-text-aqua w3-center">
+                    <h1 className="w3-opacity-off">Contact</h1>
+                    <h3 className="w3-opacity-off">Email : Text : Phone</h3>
                     <p><i className="fa fa-map-marker fa-2x w3-margin-right"></i>Denver, CO</p>
-                </div>
-                <div className="w3-panel">
                     <p><i className="fa fa-phone fa-2x w3-margin-right"></i>970-471-6603</p>
-                </div>
-                <div className="w3-panel">
                     <p><i className="fa fa-envelope-o fa-2x w3-margin-right"></i>j-huffman@hotmail.com</p>
                 </div>
             </div>
@@ -25,4 +20,4 @@ class Content extends React.Component {
     }
 }
 
-export default Content;
+export default Parallax;
