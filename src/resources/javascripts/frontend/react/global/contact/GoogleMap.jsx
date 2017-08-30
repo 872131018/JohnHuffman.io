@@ -7,9 +7,7 @@ class GoogleMap extends React.Component {
 
     render() {
         return (
-            <div className="w3-half">
-                 <div id="googleMap" className="w3-round-large w3-greyscale" style={{ width: '100%', height:'400px' }}></div>
-            </div>
+            <div id="googleMap" className="w3-greyscale" style={{ width: '100%', height:'400px' }}></div>
         );
     }
 }

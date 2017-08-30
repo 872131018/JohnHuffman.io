@@ -16,13 +16,13 @@ class Checkbox extends React.Component {
     render() {
         return (
             <div className="w3-section">
-                <div className="w3-display-inline-block demo">
+                <div className="demo">
                     <label className="switcher">
                         <input className="w3-hide" type="checkbox"
                             checked={ this.props.checked }
                             onChange={ this.liked }/>
                         <div className="switcher__indicator"></div>
-                        <span>I like JohnHuffman.io</span>
+                        <span>This is a cool site</span>
                     </label>
                 </div>
             </div>

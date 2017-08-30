@@ -19,7 +19,7 @@ class Input extends React.Component {
                 <input className="w3-input" type="text"
                     value={ this.props.value }
                     onChange={ this.update }/>
-                <label className="w3-left">{ this.props.label }</label>
+                <label>{ this.props.label }</label>
             </div>
         );
     }

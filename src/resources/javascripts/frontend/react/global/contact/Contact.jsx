@@ -9,10 +9,14 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <div className="w3-container w3-light-grey">
+            <div className="w3-container w3-pale-blue">
                 <div className="w3-content w3-padding-32">
-                    <GoogleMap/>
-                    <Form/>
+                    <div className="w3-half w3-padding">
+                        <GoogleMap/>
+                    </div>
+                    <div className="w3-half w3-padding">
+                        <Form/>
+                    </div>
                 </div>
             </div>
         );
