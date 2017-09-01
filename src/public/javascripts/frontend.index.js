@@ -30736,9 +30736,11 @@ module.exports = function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_services_redux__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_languages_redux__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reducers_tools_redux__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_forms_redux__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_contents_redux__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reducers_languages_redux__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_tools_redux__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_forms_redux__ = __webpack_require__(307);
+
 
 
 
@@ -30747,9 +30749,10 @@ module.exports = function () {
 
 var reducers = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers */])({
     ServiceStore: __WEBPACK_IMPORTED_MODULE_1__reducers_services_redux__["a" /* default */],
-    LanguageStore: __WEBPACK_IMPORTED_MODULE_2__reducers_languages_redux__["a" /* default */],
-    ToolStore: __WEBPACK_IMPORTED_MODULE_3__reducers_tools_redux__["a" /* default */],
-    FormStore: __WEBPACK_IMPORTED_MODULE_4__reducers_forms_redux__["a" /* default */]
+    ContentStore: __WEBPACK_IMPORTED_MODULE_2__reducers_contents_redux__["a" /* default */],
+    LanguageStore: __WEBPACK_IMPORTED_MODULE_3__reducers_languages_redux__["a" /* default */],
+    ToolStore: __WEBPACK_IMPORTED_MODULE_4__reducers_tools_redux__["a" /* default */],
+    FormStore: __WEBPACK_IMPORTED_MODULE_5__reducers_forms_redux__["a" /* default */]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* createStore */])(reducers));
@@ -30915,10 +30918,14 @@ var App = function (_React$Component) {
                 store.dispatch({ type: 'SET_TOOLS', data: response.data });
                 store.dispatch({ type: 'SERVICE_FINISHED' });
             });
-
             store.dispatch({ type: 'SERVICE_LOADING' });
             axios.get(window.baseUrl + '/language/find').then(function (response) {
                 store.dispatch({ type: 'SET_LANGUAGES', data: response.data });
+                store.dispatch({ type: 'SERVICE_FINISHED' });
+            });
+            store.dispatch({ type: 'SERVICE_LOADING' });
+            axios.get(window.baseUrl + '/content/find').then(function (response) {
+                store.dispatch({ type: 'SET_CONTENTS', data: response.data });
                 store.dispatch({ type: 'SERVICE_FINISHED' });
             });
         }
@@ -31742,7 +31749,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var props = function props(store) {
     return {
-        //contents: store.ContentStore.abouts
+        contents: store.ContentStore.contents
     };
 };
 
@@ -31773,13 +31780,13 @@ var Content = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'em',
                                 null,
-                                'Passion - Determination - Ingenuity'
+                                this.props.contents[0].header
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'p',
                             null,
-                            'We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                            this.props.contents[0].content
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -31796,7 +31803,7 @@ var Content = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                                this.props.contents[1].content
                             )
                         )
                     )
@@ -32108,6 +32115,58 @@ var Analytics = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Analytics);
+
+/***/ }),
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var initialState = {
+    contents: []
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+    var contents = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'SET_CONTENTS':
+            contents.contents = action.data;
+            break;
+        default:
+            break;
+    }
+    return JSON.parse(JSON.stringify(contents));
+});
 
 /***/ })
 /******/ ]);

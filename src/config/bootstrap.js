@@ -54,6 +54,17 @@ module.exports.bootstrap = function(done) {
                 });
             }
 
+            const contents = require('../database/seeds/Content.js');
+            for(let seed of contents) {
+                asyncs.push(function(callback) {
+                    Content.create(seed).then(function(result) {
+                        callback(null, result);
+                    }).catch(function(err) {
+                        console.log(err);
+                    });
+                });
+            }
+
             sails.config.globals.async.series(asyncs, function(err, results) {
                 return done();
             });

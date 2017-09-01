@@ -28,10 +28,14 @@ class App extends React.Component {
             store.dispatch({ type: 'SET_TOOLS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });
-
         store.dispatch({ type: 'SERVICE_LOADING' });
         axios.get(`${ window.baseUrl }/language/find`).then(response => {
             store.dispatch({ type: 'SET_LANGUAGES', data: response.data });
+            store.dispatch({ type: 'SERVICE_FINISHED' });
+        });
+        store.dispatch({ type: 'SERVICE_LOADING' });
+        axios.get(`${ window.baseUrl }/content/find`).then(response => {
+            store.dispatch({ type: 'SET_CONTENTS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });
     }

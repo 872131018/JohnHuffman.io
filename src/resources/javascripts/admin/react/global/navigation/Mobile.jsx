@@ -38,6 +38,7 @@ class Mobile extends React.Component {
                     <div className="w3-bar-block">
                         <Route route="/dashboard" name="Dashboard" icon="tachometer"/>
                         <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
+                        <Route route="/contents" name="Contents" icon="newspaper-o"/>
                         <div onClick={ this.logout }>
                             <Logout/>
                         </div>

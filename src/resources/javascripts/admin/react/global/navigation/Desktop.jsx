@@ -23,6 +23,7 @@ class Desktop extends React.Component {
                 <div onClick={ this.logout }>
                     <Logout/>
                 </div>
+                <Route route="/contents" name="Contents" icon="newspaper-o"/>
                 <Route route="/inquiries" name="Inquiries" icon="commenting-o"/>
                 <Route route="/dashboard" name="Dashboard" icon="tachometer"/>
             </div>

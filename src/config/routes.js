@@ -34,7 +34,9 @@ module.exports.routes = {
 
   'get /dashboard': 'Admin/AdminController.index',
 
-  'get /inquiries': 'Admin/AdminController.index'
+  'get /inquiries': 'Admin/AdminController.index',
+
+  'get /contents': 'Admin/AdminController.index'
 
 
 
