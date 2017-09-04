@@ -1,4 +1,6 @@
 import React from 'react';
+import Edit from './Edit';
+import Destroy from './Destroy';
 
 class Content extends React.Component {
     constructor(props) {
@@ -6,17 +8,23 @@ class Content extends React.Component {
     }
 
     render() {
-        const cells = this.props.headers.map((property) => {
+        const cells = this.props.headers.map((property, index) => {
             return (
-                <div className="cell v-align w3-padding-16 w3-center">{ this.props.content[property] }</div>
+                <div className="cell v-align w3-padding-16 w3-center"
+                    key={ property + index.toString() }>{ this.props.content[property] }
+                </div>
             )
         });
 
         return (
             <div className="row w3-hover-black">
                 { cells }
-                <div className="cell v-align w3-padding-16 w3-center">EDIT</div>
-                <div className="cell v-align w3-padding-16 w3-center">DESTROY</div>
+                <div className="cell v-align w3-padding-16 w3-center">
+                    <Edit route={ `${ window.baseUrl }/admin/content/${ this.props.content.id.toString() }/edit` }/>
+                </div>
+                <div className="cell v-align w3-padding-16 w3-center">
+                    <Destroy route={ `${ window.baseUrl }/admin/content/${ this.props.content.id.toString() }/destroy` }/>
+                </div>    
             </div>
         );
     }

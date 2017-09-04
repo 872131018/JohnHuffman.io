@@ -32,11 +32,15 @@ module.exports.routes = {
 
   'post /logout': 'Auth/LoginController.logout',
 
-  'get /dashboard': 'Admin/AdminController.index',
+  'get /admin/dashboard': 'Admin/AdminController.index',
 
-  'get /inquiries': 'Admin/AdminController.index',
+  'get /admin/inquiries': 'Admin/AdminController.index',
 
-  'get /contents': 'Admin/AdminController.index'
+  'get /admin/contents': 'Admin/AdminController.index',
+
+  'get /admin/content/:id/edit': 'Admin/AdminController.index',
+
+  'post /admin/content/:id/edit': 'ContentController.update'
 
 
 

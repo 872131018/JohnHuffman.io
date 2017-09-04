@@ -12,6 +12,15 @@ export default function(state = initialState, action) {
         case 'SET_CONTENTS':
             state.contents = action.data;
             break;
+        case 'NEW_CONTENT':
+            for(let index in state.contents) {
+                if(state.contents[index].id == action.data.id) {
+                    state.contents.splice(index, 1, action.data);
+                    break;
+                }
+            }
+            //state.contents.push(action.data);
+            break;
         default:
             break;
     }

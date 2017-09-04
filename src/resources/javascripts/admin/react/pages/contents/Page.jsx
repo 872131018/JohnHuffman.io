@@ -30,7 +30,7 @@ class Page extends React.Component {
             <div>
                 <h3>Contents:</h3>
                 <div className="table hundred">
-                    <Headers headers={ headers }></Headers>
+                    <Headers headers={ headers }/>
                     { contents }
                 </div>
             </div>

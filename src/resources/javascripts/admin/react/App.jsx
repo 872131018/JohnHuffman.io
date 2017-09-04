@@ -7,6 +7,7 @@ import Hero from './global/hero/Hero';
 import Dashboard from './pages/dashboard/Page';
 import Inquiries from './pages/inquiries/Page';
 import Contents from './pages/contents/Page';
+import Form from './pages/contents/Form';
 
 const props = (store) => {
     return {
@@ -47,10 +48,11 @@ class App extends React.Component {
                     <Hero/>
                     { this.props.loading != 0 ?
                         <Loading/> :
-                        <div className="w3-content">
-                            <Route exact path='/dashboard' component={ Dashboard }/>
-                            <Route exact path='/inquiries' component={ Inquiries }/>
-                            <Route exact path='/contents' component={ Contents }/>
+                        <div className="w3-container">
+                            <Route exact path='/admin/dashboard' component={ Dashboard }/>
+                            <Route exact path='/admin/inquiries' component={ Inquiries }/>
+                            <Route exact path='/admin/contents' component={ Contents }/>
+                            <Route exact path='/admin/content/:id/edit' component={ Form }/>
                         </div>
                     }
                 </div>

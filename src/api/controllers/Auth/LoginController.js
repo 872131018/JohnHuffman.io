@@ -24,7 +24,7 @@ module.exports = {
             }
             req.logIn(user, function(err) {
                 if (err) res.send(err);
-                return res.redirect('/dashboard');
+                return res.redirect('/admin/dashboard');
             });
 
         })(req, res);
