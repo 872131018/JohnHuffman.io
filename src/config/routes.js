@@ -38,9 +38,15 @@ module.exports.routes = {
 
   'get /admin/contents': 'Admin/AdminController.index',
 
+  'get /admin/content/create': 'Admin/AdminController.index',
+
+  'post /admin/content/create': 'ContentController.store',
+
   'get /admin/content/:id/edit': 'Admin/AdminController.index',
 
-  'post /admin/content/:id/edit': 'ContentController.update'
+  'post /admin/content/:id/edit': 'ContentController.update',
+
+  'delete /admin/content/:id': 'ContentController.destroy'
 
 
 

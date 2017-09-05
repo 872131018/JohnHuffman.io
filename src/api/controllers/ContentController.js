@@ -12,8 +12,30 @@ module.exports = {
             key: req.param('key'),
             header: req.param('header'),
             content: req.param('content')
-        }).meta({ fetch: true
-        }).then(function(result) {
+        }).meta({ fetch: true })
+        .then(function(result) {
+            return res.send(result[0])
+        }).catch(function(err) {
+            return res.serverError(err)
+        });
+    },
+
+    store: function(req, res) {
+        Content.create({
+            key: req.param('key'),
+            header: req.param('header'),
+            content: req.param('content')
+        }).meta({ fetch: true })
+        .then(function(result) {
+            return res.send(result)
+        }).catch(function(err) {
+            return res.serverError(err)
+        });
+    },
+
+    destroy: function(req, res) {
+        Content.destroy({ id: req.param('id') }).meta({ fetch: true })
+        .then(function(result) {
             return res.send(result)
         }).catch(function(err) {
             return res.serverError(err)

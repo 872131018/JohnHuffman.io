@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Create from './Create';
 import Headers from '../../global/Headers';
 import Content from './Content';
 
@@ -16,11 +17,10 @@ class Page extends React.Component {
     }
 
     render() {
-        const headers = this.props.headers;
         const contents = this.props.contents.map((content) => {
             return (
                 <Content
-                    headers={ headers }
+                    headers={ this.props.headers }
                     content={ content }
                     key={ content.id.toString() }/>
             );
@@ -29,8 +29,9 @@ class Page extends React.Component {
         return (
             <div>
                 <h3>Contents:</h3>
+                <Create route={ `${ window.baseUrl }/admin/content/create` }/>
                 <div className="table hundred">
-                    <Headers headers={ headers }/>
+                    <Headers headers={ this.props.headers }/>
                     { contents }
                 </div>
             </div>

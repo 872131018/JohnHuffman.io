@@ -21,7 +21,7 @@ class Form extends React.Component {
     submit() {
         store.dispatch({ type: 'SERVICE_LOADING' });
         axios.post(window.location, store.getState().FormStore).then(response => {
-            store.dispatch({ type: 'NEW_CONTENT', data: response.data[0] });
+            store.dispatch({ type: 'NEW_CONTENT', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
             this.props.history.push('/admin/contents');
         });

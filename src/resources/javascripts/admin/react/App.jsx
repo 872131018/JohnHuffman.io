@@ -53,6 +53,7 @@ class App extends React.Component {
                             <Route exact path='/admin/inquiries' component={ Inquiries }/>
                             <Route exact path='/admin/contents' component={ Contents }/>
                             <Route exact path='/admin/content/:id/edit' component={ Form }/>
+                            <Route exact path='/admin/content/create' component={ Form }/>
                         </div>
                     }
                 </div>
