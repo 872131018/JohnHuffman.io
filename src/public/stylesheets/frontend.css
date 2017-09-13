@@ -634,3 +634,6 @@ body, html {
 .v-align {
     vertical-align: middle;
 }
+.capitalize {
+    text-transform: uppercase;
+}

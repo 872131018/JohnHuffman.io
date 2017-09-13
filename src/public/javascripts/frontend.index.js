@@ -31289,18 +31289,18 @@ var Hero = function (_React$Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'w3-display-container w3-opacity-min parallaxHero' },
+                { className: 'w3-display-container parallaxHero' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'w3-display-middle w3-text-aqua w3-center' },
+                    { className: 'w3-display-right w3-padding w3-text-aqua' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h1',
-                        { className: 'w3-opacity-off' },
+                        null,
                         'John Huffman'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
-                        { className: 'w3-opacity-off' },
+                        null,
                         'Human : Colorado : Earth'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

@@ -9,8 +9,11 @@ class Input extends React.Component {
 
     update(event) {
         store.dispatch({
-            type: `SET_${ this.props.label.toUpperCase() }`,
-            data: event.target.value
+            type: 'SET_INPUT',
+            data: {
+                key: this.props.label,
+                value: event.target.value
+            }
         });
     }
 
@@ -20,7 +23,7 @@ class Input extends React.Component {
                 <input className="w3-input" type="text"
                     value={ this.props.value }
                     onChange={ this.update }/>
-                <label>{ this.props.label }</label>
+                <label className="capitalize">{ this.props.label }</label>
             </div>
         );
     }

@@ -33,19 +33,24 @@ class Form extends React.Component {
             for(let content of contents) {
                 if(content.id == this.props.match.params.id) {
                     store.dispatch({
-                        type: 'SET_KEY',
-                        data: content.key
-                    });
-                    store.dispatch({
-                        type: 'SET_HEADER',
-                        data: content.header
-                    });
-                    store.dispatch({
-                        type: 'SET_CONTENT',
-                        data: content.content
+                        type: 'SET_FORM',
+                        data: {
+                            key: content.key,
+                            header:  content.header,
+                            content: content.content
+                        }
                     });
                 }
             }
+        } else {
+            store.dispatch({
+                type: 'SET_FORM',
+                data: {
+                    key: '',
+                    header: '',
+                    content: ''
+                }
+            });
         }
     }
 
@@ -56,11 +61,11 @@ class Form extends React.Component {
                     <h3>Create Content</h3>
                     <Cancel route={ `${ window.baseUrl }/admin/contents` }/>
                 </div>
-                <Input label="Key"
+                <Input label="key"
                     value={ this.props.contentKey }/>
-                <Input label="Header"
+                <Input label="header"
                     value={ this.props.header }/>
-                <Input label="Content"
+                <Input label="content"
                     value={ this.props.content }/>
                 <button className="w3-button w3-green"
                     onClick={ this.submit }>

@@ -6,14 +6,13 @@ const initialState = {
 
 export default function(form = initialState, action) {
     switch(action.type) {
-        case 'SET_KEY':
-            form.key = action.data;
+        case 'SET_FORM':
+            form.key = action.data.key;
+            form.header = action.data.header;
+            form.content = action.data.content;
             break;
-        case 'SET_HEADER':
-            form.header = action.data;
-            break;
-        case 'SET_CONTENT':
-            form.content = action.data;
+        case 'SET_INPUT':
+            form[action.data.key] = action.data.value;
             break;
         default:
             break;

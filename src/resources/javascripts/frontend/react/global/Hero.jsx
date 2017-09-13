@@ -15,10 +15,10 @@ class Hero extends React.Component {
 
     render() {
         return (
-            <div className="w3-display-container w3-opacity-min parallaxHero">
-                <div className="w3-display-middle w3-text-aqua w3-center">
-                    <h1 className="w3-opacity-off">John Huffman</h1>
-                    <h3 className="w3-opacity-off">Human : Colorado : Earth</h3>
+            <div className="w3-display-container parallaxHero">
+                <div className="w3-display-right w3-padding w3-text-aqua">
+                    <h1>John Huffman</h1>
+                    <h3>Human : Colorado : Earth</h3>
                     <a className="w3-button w3-light-grey w3-opacity"
                         href="/images/JHuffmanResume.pdf"
                         download="JHuffmanResume.pdf"
