@@ -1,13 +1,13 @@
 const content = [
     {
         "key": "ContentOne",
-        "header": "Passion - Determination - Ingenuity",
-        "content": "We have created a fictional personal website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "header": "Hack Code / Sling Arrows",
+        "content": "I'm a developer based in Colorado.  I have an interest in most aspects of modern programming, from cloud deployment and scalability to localhost development tooling.  I am a capable PHP developer, but also have interest in other languages such as Python and Ruby, in particular the Django and Rails frameworks.  I also have a lot of experience with ES6 javascript and some of the top frontend frameworks around.  I have completed projects using Angular 2, Vue.js, and React/Redux.  I typically tackle problems with a hybrid single page application approach which involves compartmentalizing single page applications by functionality and leveraging server side logic to dictate which application is loaded and presented to the user.  This gives the developer the ability to manage a reasonable amount of code to manage for a given set of pages or features, while still allowing load times to be fast and lightweight."
     },
     {
         "key": "ContentTwo",
         "header": "",
-        "content": "Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "content": "Aside from constantly coding on projects, I have several passions away from the keyboard.  I am an avid archer, working constantly to improve my form and accuracy.  My bow work comprises of not only modern shooting with carbon fiber and aluminum rigs, but also traditional shooting with longbows and military technique from antiquity.  I also enjoy fishing and golf from time to time. Come winter, you could find me at Arapahoe Basin or Beaver Creek carving the slopes.  Martial arts have been a lifelong study of mine as well.  Having practiced Tae Kwon Do, Kung Fu, Tai Chi, Aikido, and Jiu Jitsu I enjoy discussions and training revolving around martial arts practice and theory."
     }
 ];
 

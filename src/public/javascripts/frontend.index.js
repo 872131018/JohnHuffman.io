@@ -31121,9 +31121,9 @@ var Desktop = function (_React$Component) {
                 'div',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Welcome__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Route__["a" /* default */], { route: '/', name: 'Home', icon: 'home' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Route__["a" /* default */], { route: '/contact', name: 'Contact', icon: 'commenting-o' }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Route__["a" /* default */], { route: '/work', name: 'Work', icon: 'cogs' }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Route__["a" /* default */], { route: '/contact', name: 'Contact', icon: 'commenting-o' })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Route__["a" /* default */], { route: '/', name: 'Home', icon: 'home' })
             );
         }
     }]);
@@ -31459,6 +31459,9 @@ var Form = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
 
+        _this.state = {
+            toggle: false
+        };
         _this.submit = _this.submit.bind(_this);
         return _this;
     }
@@ -31466,8 +31469,12 @@ var Form = function (_React$Component) {
     _createClass(Form, [{
         key: 'submit',
         value: function submit() {
+            var _this2 = this;
+
             axios.post(window.baseUrl + '/inquiry', store.getState().FormStore).then(function (response) {
-                //@TODO: something here, idk what
+                _this2.setState(function (previousState) {
+                    return { toggle: !previousState.toggle };
+                });
             });
         }
     }, {
@@ -31476,19 +31483,27 @@ var Form = function (_React$Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Name',
-                    value: this.props.name }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Email',
-                    value: this.props.email }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Message',
-                    value: this.props.message }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Checkbox__["a" /* default */], {
-                    checked: this.props.likes }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { className: 'w3-button w3-right w3-grey',
-                        onClick: this.submit },
-                    'Submit'
+                !this.state.toggle ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Name',
+                        value: this.props.name }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Email',
+                        value: this.props.email }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Input__["a" /* default */], { label: 'Message',
+                        value: this.props.message }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Checkbox__["a" /* default */], {
+                        checked: this.props.likes }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { className: 'w3-button w3-right w3-grey',
+                            onClick: this.submit },
+                        'Submit'
+                    )
+                ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    null,
+                    'Thanks for leaving a message, I\'ll be in touch.'
                 )
             );
         }
