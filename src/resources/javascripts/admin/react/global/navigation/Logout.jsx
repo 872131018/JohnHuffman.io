@@ -8,7 +8,7 @@ class Logout extends React.Component {
     render() {
         return (
             <span className="w3-bar-item w3-button w3-wide w3-right">
-                <i className="fa fa-sign-out fa-2x w3-margin-right"></i>Log Out
+                <i className="fa fa-sign-out fa-2x w3-margin-right"/>Log Out
             </span>
         );
     }

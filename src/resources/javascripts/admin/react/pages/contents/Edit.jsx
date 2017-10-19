@@ -9,7 +9,7 @@ class Edit extends React.Component {
     render() {
         return (
             <Link className="w3-button w3-blue" to={ this.props.route }>
-                <i className="fa fa-pencil w3-margin-right"></i>EDIT
+                <i className="fa fa-pencil w3-margin-right"/>EDIT
             </Link>
         );
     }

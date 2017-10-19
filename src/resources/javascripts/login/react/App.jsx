@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Hero from './global/hero/Hero';
-import Login from './pages/login/Page';
+import Login from './pages/login/Index';
 
 const props = (store) => {
     return {

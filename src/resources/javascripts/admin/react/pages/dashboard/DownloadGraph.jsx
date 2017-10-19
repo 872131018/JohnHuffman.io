@@ -25,7 +25,7 @@ class DownloadGraph extends React.Component {
         return (
             <div>
                 <h3>Downloads Last 30 Days</h3>
-                <div id="DownloadChart"></div>
+                <div id="DownloadChart"/>
             </div>
         );
     }

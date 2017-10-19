@@ -23,7 +23,7 @@ class Hero extends React.Component {
                         href="/images/JHuffmanResume.pdf"
                         download="JHuffmanResume.pdf"
                         onClick={ this.downloaded }>
-                        <i className="fa fa-download w3-margin-right"></i>Download Resume
+                        <i className="fa fa-download w3-margin-right"/>Download Resume
                     </a>
                 </div>
             </div>

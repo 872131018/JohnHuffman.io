@@ -25,7 +25,7 @@ class VisitGraph extends React.Component {
         return (
             <div>
                 <h3>Visits Last 30 Days</h3>
-                <div id="VisitChart"></div>
+                <div id="VisitChart"/>
             </div>
         );
     }

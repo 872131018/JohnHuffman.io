@@ -69,7 +69,7 @@ class Form extends React.Component {
                     value={ this.props.content }/>
                 <button className="w3-button w3-green"
                     onClick={ this.submit }>
-                    <i className="fa fa-paper-plane w3-margin-right"></i>Submit
+                    <i className="fa fa-paper-plane w3-margin-right"/>Submit
                 </button>
             </div>
         );

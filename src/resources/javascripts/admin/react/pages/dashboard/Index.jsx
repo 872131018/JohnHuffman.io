@@ -11,8 +11,8 @@ class Page extends React.Component {
         return (
             <div>
                 <h3>Analytics:</h3>
-                <VisitGraph></VisitGraph>
-                <DownloadGraph></DownloadGraph>
+                <VisitGraph/>
+                <DownloadGraph/>
             </div>
         );
     }

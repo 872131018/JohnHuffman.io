@@ -9,7 +9,7 @@ class Create extends React.Component {
     render() {
         return (
             <Link className="w3-button w3-green" to={ this.props.route }>
-                <i className="fa fa-plus w3-margin-right"></i>Create
+                <i className="fa fa-plus w3-margin-right"/>Create
             </Link>
         );
     }

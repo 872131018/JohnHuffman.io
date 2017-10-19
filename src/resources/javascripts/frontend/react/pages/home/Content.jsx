@@ -22,7 +22,7 @@ class Content extends React.Component {
                     </div>
                     <div className="w3-section w3-center">
                         <div className="w3-half w3-padding">
-                            <img className="w3-image w3-opacity w3-hover-opacity-off" src="/images/jamboree.jpg"/>
+                            <img className="w3-image w3-opacity" src="/images/jamboree.jpg"/>
                         </div>
                         <div className="w3-half w3-padding">
                             <p>{ this.props.contents[1].content }</p>

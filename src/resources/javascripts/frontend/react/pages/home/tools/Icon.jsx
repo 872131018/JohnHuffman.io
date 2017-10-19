@@ -9,7 +9,7 @@ class Icon extends React.Component {
         return (
             <div className="w3-left w3-padding">
                 <p>{ this.props.tool.header }</p>
-                <i className={ `w3-jumbo ${ this.props.tool.icon }` }></i>
+                <i className={ `w3-jumbo ${ this.props.tool.icon }` }/>
             </div>
         );
     }

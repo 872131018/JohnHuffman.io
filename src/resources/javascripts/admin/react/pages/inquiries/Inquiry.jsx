@@ -13,11 +13,11 @@ class Inquiry extends React.Component {
                 <div className="cell v-align w3-padding-16 w3-center">{ this.props.inquiry.message }</div>
                 { this.props.inquiry.likes ? (
                     <div className="cell v-align w3-padding-16 w3-center">
-                        <i className="fa fa-2x fa-thumbs-o-up"></i>
+                        <i className="fa fa-2x fa-thumbs-o-up"/>
                     </div>
                 ) : (
                     <div className="cell v-align w3-padding-16 w3-center">
-                        <i className="fa fa-2x fa-thumbs-o-down"></i>
+                        <i className="fa fa-2x fa-thumbs-o-down"/>
                     </div>
                 ) }
             </div>

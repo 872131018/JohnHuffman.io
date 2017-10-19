@@ -15,7 +15,7 @@ class Page extends React.Component {
                 <Content/>
                 <Languages/>
                 <Tools/>
-                <Analytics page="Home"></Analytics>
+                <Analytics page="Home"/>
             </div>
         );
     }

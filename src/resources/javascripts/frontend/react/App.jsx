@@ -6,7 +6,7 @@ import Navigation from './global/navigation/Navigation';
 import Hero from './global/Hero';
 import Contact from './global/contact/Contact';
 import Parallax from './global/Parallax';
-import Home from './pages/home/Page';
+import Home from './pages/home/Index';
 
 const props = (store) => {
     return {
@@ -24,17 +24,17 @@ class App extends React.Component {
 
         // @TODO analytic component mounting twice :/
         //store.dispatch({ type: 'SERVICE_LOADING' });
-        axios.get(`${ window.baseUrl }/tool/find`).then(response => {
+        axios.get('/tool/find').then(response => {
             store.dispatch({ type: 'SET_TOOLS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });
         store.dispatch({ type: 'SERVICE_LOADING' });
-        axios.get(`${ window.baseUrl }/language/find`).then(response => {
+        axios.get('/language/find').then(response => {
             store.dispatch({ type: 'SET_LANGUAGES', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });
         store.dispatch({ type: 'SERVICE_LOADING' });
-        axios.get(`${ window.baseUrl }/content/find`).then(response => {
+        axios.get('/content/find').then(response => {
             store.dispatch({ type: 'SET_CONTENTS', data: response.data });
             store.dispatch({ type: 'SERVICE_FINISHED' });
         });

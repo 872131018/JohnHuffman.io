@@ -6,14 +6,14 @@ class Analytics extends React.Component {
     }
 
     componentDidMount() {
-        axios.post(`${ window.baseUrl }/analytic/store`, { page: this.props.page }).then(response => {
+        axios.post('/analytic/store', { page: this.props.page }).then(response => {
             //
         });
     }
 
     render() {
         return (
-            <div></div>
+            <div/>
         );
     }
 }

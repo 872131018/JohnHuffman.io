@@ -9,7 +9,7 @@ class Cancel extends React.Component {
     render() {
         return (
             <Link className="w3-button w3-yellow" to={ this.props.route }>
-                <i className="fa fa-times w3-margin-right"></i>Cancel
+                <i className="fa fa-times w3-margin-right"/>Cancel
             </Link>
         );
     }

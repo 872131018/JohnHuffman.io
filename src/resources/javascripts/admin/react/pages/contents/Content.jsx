@@ -34,7 +34,7 @@ class Content extends React.Component {
                 <div className="cell v-align w3-padding-16 w3-center">
                     <button className="w3-button w3-red w3-margin-left"
                         onClick={ this.delete }>
-                        <i className="fa fa-exclamation-triangle w3-margin-right"></i>DESTROY
+                        <i className="fa fa-exclamation-triangle w3-margin-right"/>DESTROY
                     </button>
                 </div>
             </div>
