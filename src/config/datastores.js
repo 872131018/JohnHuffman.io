@@ -57,6 +57,6 @@ module.exports.datastores = {
     cache: {
         adapter: 'sails-redis',
         url: 'redis://redis:6379'
-}
+    }
 
 };

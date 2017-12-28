@@ -1,33 +1,33 @@
 const languages = [
     {
         "key": "LanguageOne",
-        "header": "PHP Laravel/Symphony/Slim/Lumen",
+        "header": "PHP Laravel/Symphony/Slim",
         "interest": "100%"
     },
     {
         "key": "LanguageTwo",
-        "header": "Node Sails/Express/Meteor",
+        "header": "Node Express/Sails/Meteor",
         "interest": "80%"
     },
     {
         "key": "LanguageThree",
-        "header": "ES6 Vue/React/Angular/Ember",
+        "header": "ES6 Vue/React/Angular",
         "interest": "90%"
     },
     {
         "key": "LanguageFour",
         "header": "Python Django/Flask",
-        "interest": "75%"
+        "interest": "90%"
     },
     {
         "key": "LanguageFive",
         "header": "Ruby Rails/Sinatra",
-        "interest": "80%"
+        "interest": "75%"
     },
     {
         "key": "LanguageSix",
         "header": "Go",
-        "interest": "60%"
+        "interest": "80%"
     }
 ];
 
